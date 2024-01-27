@@ -6,6 +6,7 @@ h1,
 h2,
 h3,
 p,
-a {
+a,
+button {
   font-family: poppins, sans-serif;
 }
