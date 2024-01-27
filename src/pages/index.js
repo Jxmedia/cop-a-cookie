@@ -101,9 +101,9 @@ const IndexPage = () => {
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
               <div class="lg:pr-4">
-                <div class="relative ">
+                <div class="relative flex-wrap flex-1">
                   <img
-                    class="h-full rounded-3xl flex"
+                    class="h-full rounded-3xl flex-1"
                     src="https://imgix.cosmicjs.com/8ac3c950-bb87-11ee-9be1-85f53db06a1d-bio.png"
                     alt=""
                   />
