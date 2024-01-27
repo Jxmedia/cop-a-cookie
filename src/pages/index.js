@@ -103,7 +103,7 @@ const IndexPage = () => {
               <div class="lg:pr-4">
                 <div class="relative ">
                   <img
-                    class="h-full rounded-3xl"
+                    class="h-full rounded-3xl flex"
                     src="https://imgix.cosmicjs.com/8ac3c950-bb87-11ee-9be1-85f53db06a1d-bio.png"
                     alt=""
                   />
