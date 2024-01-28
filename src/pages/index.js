@@ -112,32 +112,44 @@ const IndexPage = () => {
               <div>
                 <div class="text-base leading-7 text-gray-700 lg:max-w-lg">
                   <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                    Sample Header
+                    About Cop A Cookie
                   </h1>
                   <div class="max-w-xl">
                     <p class="mt-6">
-                      Faucibus commodo massa rhoncus, volutpat. Dignissim sed
-                      eget risus enim. Mattis mauris semper sed amet vitae sed
-                      turpis id. Id dolor praesent donec est. Odio penatibus
-                      risus viverra tellus varius sit neque erat velit. Faucibus
-                      commodo massa rhoncus, volutpat. Dignissim sed eget risus
-                      enim. Mattis mauris semper sed amet vitae sed turpis id.
+                      It all began in my very tiny apartment 5 years ago or so.
+                      During covid, I started watching YouTube videos and then
+                      attempted to bake what I’d just watched. Initially I was
+                      not very successful, but as time went by my skills
+                      continued to grow. I mostly made cakes and cookies, but
+                      the cookies turned out to be the easiest.
                     </p>
                     <p class="mt-8">
-                      Et vitae blandit facilisi magna lacus commodo. Vitae
-                      sapien duis odio id et. Id blandit molestie auctor
-                      fermentum dignissim. Lacus diam tincidunt ac cursus in
-                      vel. Mauris varius vulputate et ultrices hac adipiscing
-                      egestas. Iaculis convallis ac tempor et ut. Ac lorem vel
-                      integer orci.
+                      As time went by, my love for baking grew. It was stressful
+                      at times but for the most part, it was very calming for
+                      me. There’s nothing like putting on some music and then
+                      going to work in the kitchen. Prior to selling my cookies,
+                      i’d hand them out for free. Mostly to my coworkers and
+                      friends. The feedback was always very positive and people
+                      would always say “ You need to open a bakery”. I obviously
+                      haven’t reached that point yet, but maybe someday.
                     </p>
                     <p class="mt-8">
-                      Et vitae blandit facilisi magna lacus commodo. Vitae
-                      sapien duis odio id et. Id blandit molestie auctor
-                      fermentum dignissim. Lacus diam tincidunt ac cursus in
-                      vel. Mauris varius vulputate et ultrices hac adipiscing
-                      egestas. Iaculis convallis ac tempor et ut. Ac lorem vel
-                      integer orci.
+                      So what makes these cookies so special? If you ask me, I
+                      simply follow the rules of the baking world and ask people
+                      for their opinions. All of my cookies are made with fresh
+                      flour from a local market, unsalted butter and caster
+                      sugar. The fresh flour makes a huge difference in the
+                      texture of the cookie. The Caster sugar, blends well with
+                      the butter in my opinion and my cookies are rather large.
+                      Each cookie is weighed out to 125g. The dough is frozen
+                      over night and before I actually bake them I sit the pan
+                      in the oven while it pre heats. This way, you get a soft
+                      cookie on top and a little crunch on the bottom.
+                    </p>
+                    <p class="mt-8">
+                      If you’ve made it this far into the Bio, I just want to
+                      say thank you for your support and I look forward to
+                      seeing a cookie review from you!
                     </p>
                   </div>
                   <div class="mt-10 flex items-center gap-x-6">
@@ -162,7 +174,11 @@ const IndexPage = () => {
               </h1>
 
               <div class="mt-10 grid grid-cols-1 gap-y-32 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-2">
-                <a href="" class="hover:opacity-80">
+                <a
+                  href="https://buy.stripe.com/14k5kv0H3cqY4Ug7ss"
+                  target="_blank"
+                  class="hover:opacity-80"
+                >
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
@@ -190,7 +206,11 @@ const IndexPage = () => {
                     </a>
                   </div>
                 </a>
-                <a href="" class="hover:opacity-80">
+                <a
+                  href="https://buy.stripe.com/eVa14f89v1MkdqMfYZ"
+                  target="_blank"
+                  class="hover:opacity-80"
+                >
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
@@ -218,7 +238,11 @@ const IndexPage = () => {
                     </a>
                   </div>
                 </a>
-                <a href="" class="hover:opacity-80">
+                <a
+                  href="https://buy.stripe.com/3cs4grcpL8aI5Yk7su"
+                  target="_blank"
+                  class="hover:opacity-80"
+                >
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
@@ -246,7 +270,11 @@ const IndexPage = () => {
                     </a>
                   </div>
                 </a>
-                <a href="" class="hover:opacity-80">
+                <a
+                  href="https://buy.stripe.com/bIY14f2Pbdv29aweUX"
+                  target="_blank"
+                  class="hover:opacity-80"
+                >
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
@@ -384,6 +412,15 @@ const IndexPage = () => {
               </div>
             </form>
           </div>
+          <p class="mt-4 text-xs leading-5 text-gray-200">
+            &copy;{new Date().getFullYear()} Cop A Cookie. All rights reserved.{" "}
+            <a
+              href="mailto:josh@thejxmediagroup.com"
+              class="mt-4 text-xs leading-5 text-gray-200"
+            >
+              &copy;{new Date().getFullYear()} Powered By Jxmedia
+            </a>
+          </p>
         </section>
       </div>
     </>
