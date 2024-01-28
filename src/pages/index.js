@@ -411,16 +411,17 @@ const IndexPage = () => {
                 </button>
               </div>
             </form>
+            <p class="mx-auto mt-4 text-xs leading-5 text-gray-200">
+              &copy;{new Date().getFullYear()} Cop A Cookie. All rights
+              reserved.{" "}
+              <a
+                href="mailto:josh@thejxmediagroup.com"
+                class="mt-4 text-xs leading-5 text-gray-200"
+              >
+                &copy;{new Date().getFullYear()} Powered By Jxmedia
+              </a>
+            </p>
           </div>
-          <p class="mt-4 text-xs leading-5 text-gray-200">
-            &copy;{new Date().getFullYear()} Cop A Cookie. All rights reserved.{" "}
-            <a
-              href="mailto:josh@thejxmediagroup.com"
-              class="mt-4 text-xs leading-5 text-gray-200"
-            >
-              &copy;{new Date().getFullYear()} Powered By Jxmedia
-            </a>
-          </p>
         </section>
       </div>
     </>
