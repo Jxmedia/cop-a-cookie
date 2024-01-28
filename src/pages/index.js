@@ -416,7 +416,7 @@ const IndexPage = () => {
               reserved.{" "}
               <a
                 href="mailto:josh@thejxmediagroup.com"
-                class="mt-4 text-xs leading-5 text-gray-200"
+                class="text-xs leading-5 hover:underline"
               >
                 Powered By Jxmedia
               </a>
