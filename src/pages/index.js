@@ -1,9 +1,10 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { Link } from "gatsby";
 
 const IndexPage = () => {
+  const [isBannerOpened, setisBannerOpened] = useState(true);
   //
   return (
     <>
@@ -17,6 +18,42 @@ const IndexPage = () => {
           href="https://imgix.cosmicjs.com/76cbc550-bd3b-11ee-9fc1-4bb6168d3a2d-favicon.png"
         />
       </Helmet>
+
+      {isBannerOpened === true ? (
+        <div class="sticky top-0 z-50 flex items-center gap-x-6 bg-gray-900 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+          <p class="text-sm leading-6 text-white">
+            <a>
+              <strong class="font-semibold">
+                FREE SHIPPING ON ALL ORDERS!
+              </strong>
+              <svg
+                viewBox="0 0 2 2"
+                class="mx-2 inline h-0.5 w-0.5 fill-current"
+                aria-hidden="true"
+              ></svg>
+            </a>
+          </p>
+          <div class="flex flex-1 justify-end">
+            <button
+              type="button"
+              onClick={() => setisBannerOpened(!isBannerOpened)}
+              class="-m-3 p-3 focus-visible:outline-offset-[-4px]"
+            >
+              <span class="sr-only">Dismiss</span>
+              <svg
+                class="h-5 w-5 text-white"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div></div>
+      )}
       <div class="">
         <div class="hidden md:block relative isolate overflow-hidden bg-sky-200">
           <div class="mx-auto items-center max-w-7xl px-6 pt-10 pb-10 lg:flex lg:px-8">
@@ -170,12 +207,12 @@ const IndexPage = () => {
           <div class="bg-sky-200">
             <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
               <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Current Menu
+                Available Dozens (Free Shipping!)
               </h1>
 
               <div class="mt-10 grid grid-cols-1 gap-y-32 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-2">
                 <a
-                  href="https://buy.stripe.com/14k5kv0H3cqY4Ug7ss"
+                  href="https://buy.stripe.com/dR6aEP3Tfez672o5kr"
                   target="_blank"
                   class="hover:opacity-80"
                 >
@@ -183,7 +220,7 @@ const IndexPage = () => {
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
                         src="https://imgix.cosmicjs.com/c814b580-bb8c-11ee-9be1-85f53db06a1d-red-velvet.png"
-                        alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
+                        alt="Red Velvet dozen"
                         class="rounded-3xl h-full w-full object-cover object-center"
                       />
                     </div>
@@ -195,7 +232,7 @@ const IndexPage = () => {
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
                       <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-8">
-                        $4
+                        $60
                       </p>
                     </div>
                   </div>
@@ -207,7 +244,7 @@ const IndexPage = () => {
                   </div>
                 </a>
                 <a
-                  href="https://buy.stripe.com/eVa14f89v1MkdqMfYZ"
+                  href="https://buy.stripe.com/3cs9ALcpL76E0E03ci"
                   target="_blank"
                   class="hover:opacity-80"
                 >
@@ -215,7 +252,7 @@ const IndexPage = () => {
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
                         src="https://imgix.cosmicjs.com/572e9770-bd3d-11ee-9fc1-4bb6168d3a2d-black-forest.png"
-                        alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
+                        alt="Black Forest Dozen"
                         class="rounded-3xl h-full w-full object-cover object-center"
                       />
                     </div>
@@ -227,7 +264,7 @@ const IndexPage = () => {
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
                       <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-8">
-                        $4
+                        $60
                       </p>
                     </div>
                   </div>
@@ -239,7 +276,7 @@ const IndexPage = () => {
                   </div>
                 </a>
                 <a
-                  href="https://buy.stripe.com/3cs4grcpL8aI5Yk7su"
+                  href="https://buy.stripe.com/fZebITcpL0Ig86s4gl"
                   target="_blank"
                   class="hover:opacity-80"
                 >
@@ -247,7 +284,7 @@ const IndexPage = () => {
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
                         src="https://imgix.cosmicjs.com/57296750-bd3d-11ee-9fc1-4bb6168d3a2d-biscoff.png"
-                        alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
+                        alt="Biscoff Dozen"
                         class="rounded-3xl h-full w-full object-cover object-center"
                       />
                     </div>
@@ -259,7 +296,7 @@ const IndexPage = () => {
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
                       <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-8">
-                        $4
+                        $60
                       </p>
                     </div>
                   </div>
@@ -271,7 +308,7 @@ const IndexPage = () => {
                   </div>
                 </a>
                 <a
-                  href="https://buy.stripe.com/bIY14f2Pbdv29aweUX"
+                  href="https://buy.stripe.com/5kAdR161n4YwbiEcMQ"
                   target="_blank"
                   class="hover:opacity-80"
                 >
@@ -279,7 +316,7 @@ const IndexPage = () => {
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
                         src="https://imgix.cosmicjs.com/5714f4f0-bd3d-11ee-9fc1-4bb6168d3a2d-chocolate.png"
-                        alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
+                        alt="Chocolate Chip dozen"
                         class="rounded-3xl h-full w-full object-cover object-center"
                       />
                     </div>
@@ -291,7 +328,7 @@ const IndexPage = () => {
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
                       <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-8">
-                        $4
+                        $60
                       </p>
                     </div>
                   </div>
