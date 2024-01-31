@@ -203,8 +203,132 @@ const IndexPage = () => {
           </div>
         </div>
 
-        <section id="hidden menu">
-          <div class="bg-sky-200">
+        <section id="contact">
+          <div class="isolate bg-gradient-to-r from-cyan-50 to-blue-50 px-6 py-24 sm:py-32 lg:px-8">
+            <div
+              class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
+              aria-hidden="true"
+            >
+              <div class="relative left-1/2 -z-10"></div>
+            </div>
+            <div class="mx-auto max-w-2xl text-center">
+              <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Contact Or Submit A Review
+              </h2>
+            </div>
+            <form
+              netlify
+              method="POST"
+              action="/general-thank-you"
+              target="_self"
+              id="Main Contact"
+              name="Main Contact"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              class="mx-auto mt-10 max-w-xl"
+            >
+              <input type="hidden" name="form-name" value="Main Contact" />
+              <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                <div class="sm:col-span-2">
+                  <label
+                    for="full-name
+                full-name"
+                    class="block text-sm font-semibold leading-6 text-gray-900"
+                  >
+                    Full Name
+                  </label>
+                  <div class="mt-2.5">
+                    <input
+                      type="text"
+                      name="full-name"
+                      id="full-name"
+                      autocomplete="organization"
+                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                  <label
+                    for="email"
+                    class="block text-sm font-semibold leading-6 text-gray-900"
+                  >
+                    Email
+                  </label>
+                  <div class="mt-2.5">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      autocomplete="email"
+                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                  <label
+                    for="phone-number"
+                    class="block text-sm font-semibold leading-6 text-gray-900"
+                  >
+                    Phone number
+                  </label>
+                  <div class="relative mt-2.5">
+                    <input
+                      type="tel"
+                      name="phone-number"
+                      id="phone-number"
+                      autocomplete="tel"
+                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                  <label
+                    for="message"
+                    class="block text-sm font-semibold leading-6 text-gray-900"
+                  >
+                    Message or review
+                  </label>
+                  <div class="mt-2.5">
+                    <textarea
+                      name="message"
+                      id="message"
+                      rows="4"
+                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-10">
+                <button
+                  type="submit"
+                  class="block w-full rounded-md bg-blue-600 px-3.5 py-3 text-center text-lg font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                >
+                  Let's talk
+                </button>
+              </div>
+            </form>
+            <p class="flex justify-center mt-20 text-xs leading-5 text-gray-500">
+              &copy;{new Date().getFullYear()} Cop A Cookie. All rights
+              reserved.{" "}
+              <a
+                href="mailto:josh@thejxmediagroup.com"
+                class="text-xs leading-5 hover:underline"
+              >
+                Powered By Jxmedia
+              </a>
+            </p>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+};
+
+export default IndexPage;
+
+/*
+   <section id="menu">
+          <div class="hidden bg-sky-200">
             <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
               <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 Available Dozens (Free Shipping!)
@@ -343,126 +467,4 @@ const IndexPage = () => {
             </div>
           </div>
         </section>
-
-        <section id="contact">
-          <div class="isolate bg-gradient-to-r from-cyan-50 to-blue-50 px-6 py-24 sm:py-32 lg:px-8">
-            <div
-              class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
-              aria-hidden="true"
-            >
-              <div class="relative left-1/2 -z-10"></div>
-            </div>
-            <div class="mx-auto max-w-2xl text-center">
-              <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Contact Or Submit A Review
-              </h2>
-            </div>
-            <form
-              netlify
-              method="POST"
-              action="/general-thank-you"
-              target="_self"
-              id="Main Contact"
-              name="Main Contact"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              class="mx-auto mt-10 max-w-xl"
-            >
-              <input type="hidden" name="form-name" value="Main Contact" />
-              <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-                <div class="sm:col-span-2">
-                  <label
-                    for="full-name
-                full-name"
-                    class="block text-sm font-semibold leading-6 text-gray-900"
-                  >
-                    Full Name
-                  </label>
-                  <div class="mt-2.5">
-                    <input
-                      type="text"
-                      name="full-name"
-                      id="full-name"
-                      autocomplete="organization"
-                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-                <div class="sm:col-span-2">
-                  <label
-                    for="email"
-                    class="block text-sm font-semibold leading-6 text-gray-900"
-                  >
-                    Email
-                  </label>
-                  <div class="mt-2.5">
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      autocomplete="email"
-                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-                <div class="sm:col-span-2">
-                  <label
-                    for="phone-number"
-                    class="block text-sm font-semibold leading-6 text-gray-900"
-                  >
-                    Phone number
-                  </label>
-                  <div class="relative mt-2.5">
-                    <input
-                      type="tel"
-                      name="phone-number"
-                      id="phone-number"
-                      autocomplete="tel"
-                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-                <div class="sm:col-span-2">
-                  <label
-                    for="message"
-                    class="block text-sm font-semibold leading-6 text-gray-900"
-                  >
-                    Message or review
-                  </label>
-                  <div class="mt-2.5">
-                    <textarea
-                      name="message"
-                      id="message"
-                      rows="4"
-                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    ></textarea>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-10">
-                <button
-                  type="submit"
-                  class="block w-full rounded-md bg-blue-600 px-3.5 py-3 text-center text-lg font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                >
-                  Let's talk
-                </button>
-              </div>
-            </form>
-            <p class="flex justify-center mt-20 text-xs leading-5 text-gray-500">
-              &copy;{new Date().getFullYear()} Cop A Cookie. All rights
-              reserved.{" "}
-              <a
-                href="mailto:josh@thejxmediagroup.com"
-                class="text-xs leading-5 hover:underline"
-              >
-                Powered By Jxmedia
-              </a>
-            </p>
-          </div>
-        </section>
-      </div>
-    </>
-  );
-};
-
-export default IndexPage;
+*/
