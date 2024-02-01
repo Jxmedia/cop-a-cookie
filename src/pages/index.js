@@ -117,7 +117,7 @@ const IndexPage = () => {
               </p>
               <div class="mt-10 flex items-center gap-x-6">
                 <AnchorLink
-                  class="hidden w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
+                  class="w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
                   href="#menu"
                 >
                   ORDER NOW
@@ -189,7 +189,7 @@ const IndexPage = () => {
                       seeing a cookie review from you!
                     </p>
                   </div>
-                  <div class="hidden mt-10 flex items-center gap-x-6">
+                  <div class="mt-10 flex items-center gap-x-6">
                     <AnchorLink
                       class="w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
                       href="#menu"
