@@ -68,7 +68,7 @@ const IndexPage = () => {
               </p>
               <div class="mt-10 flex items-center gap-x-6">
                 <AnchorLink
-                  class="w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
+                  class="hidden w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
                   href="#menu"
                 >
                   ORDER NOW
@@ -117,7 +117,7 @@ const IndexPage = () => {
               </p>
               <div class="mt-10 flex items-center gap-x-6">
                 <AnchorLink
-                  class="w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
+                  class="hidden w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
                   href="#menu"
                 >
                   ORDER NOW
@@ -189,7 +189,7 @@ const IndexPage = () => {
                       seeing a cookie review from you!
                     </p>
                   </div>
-                  <div class="mt-10 flex items-center gap-x-6">
+                  <div class="hidden mt-10 flex items-center gap-x-6">
                     <AnchorLink
                       class="w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
                       href="#menu"
@@ -202,7 +202,7 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
-        <section id="menu">
+        <section id="hidden menu">
           <div class=" bg-gradient-to-b from-cyan-200 to-blue-200">
             <div class="dozen mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
               <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
