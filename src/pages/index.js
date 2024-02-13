@@ -153,12 +153,13 @@ const IndexPage = () => {
                   </h1>
                   <div class="max-w-xl">
                     <p class="mt-6">
-                      It all began in my very tiny apartment 5 years ago or so.
-                      During covid, I started watching YouTube videos and then
-                      attempted to bake what I’d just watched. Initially I was
-                      not very successful, but as time went by my skills
-                      continued to grow. I mostly made cakes and cookies, but
-                      the cookies turned out to be the easiest.
+                      Hey yall, I'm Keith Dunigan. My story begins in my very
+                      tiny apartment 5 years ago or so. During covid, I started
+                      watching YouTube videos and then attempted to bake what
+                      I’d just watched. Initially I was not very successful, but
+                      as time went by my skills continued to grow. I mostly made
+                      cakes and cookies, but the cookies turned out to be the
+                      easiest.
                     </p>
                     <p class="mt-8">
                       As time went by, my love for baking grew. It was stressful
