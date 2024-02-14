@@ -761,9 +761,26 @@ const IndexPage = () => {
               reserved.{" "}
               <a
                 href="mailto:josh@thejxmediagroup.com"
-                class="text-xs leading-5 hover:underline"
+                class="ml-0.5 text-xs leading-5 hover:underline"
               >
+                {" "}
                 Powered By Jxmedia
+              </a>
+              <a
+                href="/terms-and-conditions"
+                target="_blank"
+                class="ml-0.5 text-xs leading-5 hover:underline"
+              >
+                {" "}
+                | Terms
+              </a>
+              <a
+                href="/privacy"
+                target="_blank"
+                class="ml-0.5 text-xs leading-5 hover:underline"
+              >
+                {" "}
+                | Privacy
               </a>
             </p>
           </div>
@@ -774,146 +791,3 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
-
-/*
-   <section id="menu">
-          <div class="hidden bg-sky-200">
-            <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-              <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Available Dozens (Free Shipping!)
-              </h1>
-
-              <div class="mt-10 grid grid-cols-1 gap-y-32 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-2">
-                <a
-                  href="https://buy.stripe.com/dR6aEP3Tfez672o5kr"
-                  target="_blank"
-                  class="hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/c814b580-bb8c-11ee-9be1-85f53db06a1d-red-velvet.png"
-                        alt="Red Velvet dozen"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Red Velvet
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-8">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a
-                  href="https://buy.stripe.com/3cs9ALcpL76E0E03ci"
-                  target="_blank"
-                  class="hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/572e9770-bd3d-11ee-9fc1-4bb6168d3a2d-black-forest.png"
-                        alt="Black Forest Dozen"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Black Forest
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-8">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a
-                  href="https://buy.stripe.com/fZebITcpL0Ig86s4gl"
-                  target="_blank"
-                  class="hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/57296750-bd3d-11ee-9fc1-4bb6168d3a2d-biscoff.png"
-                        alt="Biscoff Dozen"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Biscoff
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-8">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a
-                  href="https://buy.stripe.com/5kAdR161n4YwbiEcMQ"
-                  target="_blank"
-                  class="hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/5714f4f0-bd3d-11ee-9fc1-4bb6168d3a2d-chocolate.png"
-                        alt="Chocolate Chip dozen"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Chocolate Chip
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-8">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-*/
