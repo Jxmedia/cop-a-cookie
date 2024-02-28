@@ -263,7 +263,7 @@ const IndexPage = () => {
                       <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
                         $60
                       </p>
                     </div>
@@ -368,7 +368,7 @@ const IndexPage = () => {
                       <p class="mt-1 text-sm text-gray-800">6 + 6</p>
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
                         $60
                       </p>
                     </div>
@@ -464,7 +464,7 @@ const IndexPage = () => {
                       <p class="mt-1 text-sm text-gray-800">6 + 6</p>
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
                         $60
                       </p>
                     </div>
@@ -496,7 +496,7 @@ const IndexPage = () => {
                       <p class="mt-1 text-sm text-gray-800">6 + 6</p>
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
                         $60
                       </p>
                     </div>
@@ -560,7 +560,7 @@ const IndexPage = () => {
                       <p class="mt-1 text-sm text-gray-800">6 + 6</p>
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
                         $60
                       </p>
                     </div>
@@ -592,7 +592,7 @@ const IndexPage = () => {
                       <p class="mt-1 text-sm text-gray-800">6 + 6</p>
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
                         $60
                       </p>
                     </div>
@@ -633,7 +633,7 @@ const IndexPage = () => {
                       <p class="mt-1 text-sm text-gray-800">4 + 4 + 4</p>
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
                         $60
                       </p>
                     </div>
@@ -699,7 +699,7 @@ const IndexPage = () => {
                       <p class="mt-1 text-sm text-gray-800">4 + 4 + 4</p>
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
                         $60
                       </p>
                     </div>
