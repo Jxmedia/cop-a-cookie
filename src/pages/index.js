@@ -244,26 +244,26 @@ const IndexPage = () => {
                   </div>
                 </a>
                 <a
-                  href="https://buy.stripe.com/3cs9ALcpL76E0E03ci"
+                  href="https://buy.stripe.com/9AQfZ92Pb1Mk1I428w"
                   target="_blank"
                   class="hover:opacity-80"
                 >
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
-                        src="https://imgix.cosmicjs.com/572e9770-bd3d-11ee-9fc1-4bb6168d3a2d-black-forest.png"
-                        alt="Black Forest Dozen"
+                        src="https://imgix.cosmicjs.com/db0aa980-d679-11ee-9ce5-59949019255e-lemon.png"
+                        alt="Lemon Dozen"
                         class="rounded-3xl h-full w-full object-cover object-center"
                       />
                     </div>
                     <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Black Forest
+                      <h3 class="items-center text-3xl font-semibold text-gray-900">
+                        Lemon{" "}
                       </h3>
                       <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
                         $60
                       </p>
                     </div>
@@ -347,28 +347,28 @@ const IndexPage = () => {
                 Available 6 + 6 Assortments
               </h1>
 
-              <div class="mt-10 grid grid-cols-1 gap-y-24 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
+              <div class="mt-10 grid grid-cols-1 gap-y-24 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4">
                 <a
-                  href="https://buy.stripe.com/4gweV51L73Us4Ug4go"
+                  href="https://buy.stripe.com/fZe28jdtP1Mk9aweVh"
                   target="_blank"
                   class="hover:opacity-80"
                 >
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
-                        src="https://imgix.cosmicjs.com/16f21300-c128-11ee-9fc1-4bb6168d3a2d-velvet-bf.png"
-                        alt="Red Velvet Black Forest"
+                        src="https://imgix.cosmicjs.com/8e35aaa0-d67a-11ee-9ce5-59949019255e-lemon-bisc.png"
+                        alt="Lemon Biscoff"
                         class="rounded-3xl h-full w-full object-cover object-center"
                       />
                     </div>
                     <div class="relative mt-4 text-center">
                       <h3 class="text-3xl font-semibold text-gray-900">
-                        Red Velvet + <span class="block">Black Forest</span>
+                        Lemon + <span class="block">Biscoff</span>
                       </h3>
                       <p class="mt-1 text-sm text-gray-800">6 + 6</p>
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
                         $60
                       </p>
                     </div>
@@ -445,26 +445,26 @@ const IndexPage = () => {
                   </div>
                 </a>
                 <a
-                  href="https://buy.stripe.com/aEU28j89vcqY1I400b"
+                  href="https://buy.stripe.com/aEU3cn89v62AfyU14q"
                   target="_blank"
                   class="hover:opacity-80"
                 >
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
-                        src="https://imgix.cosmicjs.com/16c7a7a0-c128-11ee-9fc1-4bb6168d3a2d-bf-bisc.png"
-                        alt="Black Forest Biscoff"
+                        src="https://imgix.cosmicjs.com/bff36e60-d67a-11ee-9ce5-59949019255e-velvet-smores.png"
+                        alt="Red Velvet Smores"
                         class="rounded-3xl h-full w-full object-cover object-center"
                       />
                     </div>
                     <div class="relative mt-4 text-center">
                       <h3 class="text-3xl font-semibold text-gray-900">
-                        Black Forest + <span class="block">Biscoff</span>
+                        Red Velvet + <span class="block">Smores</span>
                       </h3>
                       <p class="mt-1 text-sm text-gray-800">6 + 6</p>
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
                         $60
                       </p>
                     </div>
@@ -477,26 +477,26 @@ const IndexPage = () => {
                   </div>
                 </a>
                 <a
-                  href="https://buy.stripe.com/cN228j2Pb3Us3Qc00c"
+                  href="https://buy.stripe.com/8wM14f4XjfDa86s14p"
                   target="_blank"
                   class="hover:opacity-80"
                 >
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
-                        src="https://imgix.cosmicjs.com/16f48400-c128-11ee-9fc1-4bb6168d3a2d-bf-choc.png"
-                        alt="Black Forest Chocolate"
+                        src="https://imgix.cosmicjs.com/e52cb290-d67a-11ee-9ce5-59949019255e-smores-choc.png"
+                        alt="Smores Chocolate"
                         class="rounded-3xl h-full w-full object-cover object-center"
                       />
                     </div>
                     <div class="relative mt-4 text-center">
                       <h3 class="text-3xl font-semibold text-gray-900">
-                        Black Forest + <span class="block">Chocolate Chip</span>
+                        Smores + <span class="block">Chocolate Chip</span>
                       </h3>
                       <p class="mt-1 text-sm text-gray-800">6 + 6</p>
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
                         $60
                       </p>
                     </div>
@@ -540,6 +540,70 @@ const IndexPage = () => {
                     </a>
                   </div>
                 </a>
+                <a
+                  href="https://buy.stripe.com/6oEeV5dtPdv20E03cw"
+                  target="_blank"
+                  class="hover:opacity-80"
+                >
+                  <div class="relative">
+                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
+                      <img
+                        src="https://imgix.cosmicjs.com/3daea040-d67b-11ee-9ce5-59949019255e-lemon-smores.png"
+                        alt="Lemon Smores"
+                        class="rounded-3xl h-full w-full object-cover object-center"
+                      />
+                    </div>
+                    <div class="relative mt-4 text-center">
+                      <h3 class="text-3xl font-semibold text-gray-900">
+                        Lemon + <span class="block">Smores</span>
+                      </h3>
+                      <p class="mt-1 text-sm text-gray-800">6 + 6</p>
+                    </div>
+                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
+                        $60
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="mt-6">
+                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
+                      Order Now
+                    </a>
+                  </div>
+                </a>
+                <a
+                  href="https://buy.stripe.com/cN2aEPblHgHecmIeVd"
+                  target="_blank"
+                  class="hover:opacity-80"
+                >
+                  <div class="relative">
+                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
+                      <img
+                        src="https://imgix.cosmicjs.com/84fbf3d0-d67b-11ee-9ce5-59949019255e-velvet-lemon.png"
+                        alt="Lemon Velvet"
+                        class="rounded-3xl h-full w-full object-cover object-center"
+                      />
+                    </div>
+                    <div class="relative mt-4 text-center">
+                      <h3 class="text-3xl font-semibold text-gray-900">
+                        Red Velvet + <span class="block">Lemon</span>
+                      </h3>
+                      <p class="mt-1 text-sm text-gray-800">6 + 6</p>
+                    </div>
+                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
+                        $60
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="mt-6">
+                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
+                      Order Now
+                    </a>
+                  </div>
+                </a>
               </div>
             </div>
             <div class="4x4 mx-auto max-w-2xl px-4 py-16 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -549,27 +613,27 @@ const IndexPage = () => {
 
               <div class="mt-10 grid grid-cols-1 gap-y-24 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
                 <a
-                  href="https://buy.stripe.com/eVabITexT2QoeuQ9AO"
+                  href="https://buy.stripe.com/dR600b1L78aIeuQ8wO"
                   target="_blank"
                   class="hover:opacity-80"
                 >
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
-                        src="https://imgix.cosmicjs.com/16cc3b80-c128-11ee-9fc1-4bb6168d3a2d-red-bf-bisc.png"
+                        src="https://imgix.cosmicjs.com/d8b70aa0-d67b-11ee-9ce5-59949019255e-velvet-lemon-bisc.png"
                         alt="Red Velvet Black Forest Bisc"
                         class="rounded-3xl h-full w-full object-cover object-center"
                       />
                     </div>
                     <div class="relative mt-4 text-center">
                       <h3 class="text-3xl font-semibold text-gray-900">
-                        Red Velvet + <span class="block">Black Forest + </span>
+                        Red Velvet + <span class="block">Lemon + </span>
                         <span class="block">Biscoff </span>
                       </h3>
                       <p class="mt-1 text-sm text-gray-800">4 + 4 + 4</p>
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
                         $60
                       </p>
                     </div>
@@ -615,27 +679,27 @@ const IndexPage = () => {
                   </div>
                 </a>
                 <a
-                  href="https://buy.stripe.com/3cs14fblH2Qo4UgeVa"
+                  href="https://buy.stripe.com/4gw7sDahD9eMeuQ4gx"
                   target="_blank"
                   class="hover:opacity-80"
                 >
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
-                        src="https://imgix.cosmicjs.com/34cd8f80-c12d-11ee-9fc1-4bb6168d3a2d-bf-choc-bisc.png"
-                        alt="Black Forest Bisc Chocolate"
+                        src="https://imgix.cosmicjs.com/035c6660-d67c-11ee-9ce5-59949019255e-choc-lemon-smores.png"
+                        alt="Chocolate Lemon Smores"
                         class="rounded-3xl h-full w-full object-cover object-center"
                       />
                     </div>
                     <div class="relative mt-4 text-center">
                       <h3 class="text-3xl font-semibold text-gray-900">
-                        Black Forest + <span class="block">Biscoff + </span>
-                        <span class="block">Chocolate Chip </span>
+                        Chocolate Chip + <span class="block">Lemon + </span>
+                        <span class="block">Smores</span>
                       </h3>
                       <p class="mt-1 text-sm text-gray-800">4 + 4 + 4</p>
                     </div>
                     <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-600 rounded-bl-3xl p-4">
                         $60
                       </p>
                     </div>
