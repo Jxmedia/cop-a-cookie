@@ -203,8 +203,8 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
-        <section id="hidden menu">
-          <div class="bg-gradient-to-b from-cyan-200 to-blue-200">
+        <section id="menu">
+          <div class="hidden bg-gradient-to-b from-cyan-200 to-blue-200">
             <div class="dozen mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
               <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 Available Single Flavor Dozens
