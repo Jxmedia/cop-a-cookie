@@ -20,11 +20,14 @@ const IndexPage = () => {
       </Helmet>
 
       {isBannerOpened === true ? (
-        <div class="sticky top-0 z-50 flex items-center gap-x-6 bg-gray-900 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+        <div class="sticky top-0 z-50 flex items-center gap-x-6 bg-red-900 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
           <p class="text-sm leading-6 text-white">
             <a>
-              <strong class="text-2xl font-semibold">
+              <strong class="hidden text-2xl font-semibold">
                 FREE SHIPPING ON ALL ORDERS!
+              </strong>
+              <strong class="text-2xl font-semibold">
+                WE ARE CURRENTLY SOLD OUT!😔
               </strong>
               <svg
                 viewBox="0 0 2 2"
@@ -68,7 +71,7 @@ const IndexPage = () => {
               </p>
               <div class="mt-10 flex items-center gap-x-6">
                 <AnchorLink
-                  class="hidden w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
+                  class="w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
                   href="#menu"
                 >
                   ORDER NOW
@@ -117,7 +120,7 @@ const IndexPage = () => {
               </p>
               <div class="mt-10 flex items-center gap-x-6">
                 <AnchorLink
-                  class="hidden w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
+                  class="w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
                   href="#menu"
                 >
                   ORDER NOW
@@ -204,6 +207,129 @@ const IndexPage = () => {
           </div>
         </div>
         <section id="menu">
+          <div class="soldout bg-gradient-to-b from-red-400 to-rose-600">
+            <div class="dozen mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+              <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                We are currently sold out, please try again tomorrow
+              </h1>
+
+              <div class="saturate-0 mt-10 grid grid-cols-1 gap-y-32 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4">
+                <a class="opacity-80">
+                  <div class="relative">
+                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
+                      <img
+                        src="https://imgix.cosmicjs.com/c814b580-bb8c-11ee-9be1-85f53db06a1d-red-velvet.png"
+                        alt="Red Velvet dozen"
+                        class="rounded-3xl h-full w-full object-cover object-center"
+                      />
+                    </div>
+                    <div class="relative mt-4 text-center">
+                      <h3 class="text-3xl font-semibold text-gray-900">
+                        Red Velvet
+                      </h3>
+                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
+                    </div>
+                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
+                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
+                        $60
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="mt-6">
+                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
+                      Order Now
+                    </a>
+                  </div>
+                </a>
+                <a class="opacity-80">
+                  <div class="relative">
+                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
+                      <img
+                        src="https://imgix.cosmicjs.com/db0aa980-d679-11ee-9ce5-59949019255e-lemon.png"
+                        alt="Lemon Dozen"
+                        class="rounded-3xl h-full w-full object-cover object-center"
+                      />
+                    </div>
+                    <div class="relative mt-4 text-center">
+                      <h3 class="items-center text-3xl font-semibold text-gray-900">
+                        Lemon{" "}
+                      </h3>
+                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
+                    </div>
+                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
+                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
+                        $60
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="mt-6">
+                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
+                      Order Now
+                    </a>
+                  </div>
+                </a>
+                <a class="opacity-80">
+                  <div class="relative">
+                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
+                      <img
+                        src="https://imgix.cosmicjs.com/57296750-bd3d-11ee-9fc1-4bb6168d3a2d-biscoff.png"
+                        alt="Biscoff Dozen"
+                        class="rounded-3xl h-full w-full object-cover object-center"
+                      />
+                    </div>
+                    <div class="relative mt-4 text-center">
+                      <h3 class="text-3xl font-semibold text-gray-900">
+                        Biscoff
+                      </h3>
+                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
+                    </div>
+                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
+                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
+                        $60
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="mt-6">
+                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
+                      Order Now
+                    </a>
+                  </div>
+                </a>
+                <a class="opacity-80">
+                  <div class="relative">
+                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
+                      <img
+                        src="https://imgix.cosmicjs.com/5714f4f0-bd3d-11ee-9fc1-4bb6168d3a2d-chocolate.png"
+                        alt="Chocolate Chip dozen"
+                        class="rounded-3xl h-full w-full object-cover object-center"
+                      />
+                    </div>
+                    <div class="relative mt-4 text-center">
+                      <h3 class="text-3xl font-semibold text-gray-900">
+                        Chocolate Chip
+                      </h3>
+                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
+                    </div>
+                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
+                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
+                        $60
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="mt-6">
+                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
+                      Order Now
+                    </a>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
           <div class="hidden bg-gradient-to-b from-cyan-200 to-blue-200">
             <div class="dozen mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
               <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
