@@ -20,13 +20,13 @@ const IndexPage = () => {
       </Helmet>
 
       {isBannerOpened === true ? (
-        <div class="sticky top-0 z-50 flex items-center gap-x-6 bg-red-900 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+        <div class="sticky top-0 z-50 flex items-center gap-x-6 bg-gray-900 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
           <p class="text-sm leading-6 text-white">
             <a>
-              <strong class="hidden text-2xl font-semibold">
-                FREE SHIPPING ON ALL ORDERS!
-              </strong>
               <strong class="text-2xl font-semibold">
+                ORDERS WILL BE SHIPPED WITHIN 7-10 DAYS FOR FREE!
+              </strong>
+              <strong class="hidden text-2xl font-semibold">
                 WE ARE CURRENTLY SOLD OUT!😔
               </strong>
               <svg
@@ -207,7 +207,7 @@ const IndexPage = () => {
           </div>
         </div>
         <section id="menu">
-          <div class="soldout bg-gradient-to-b from-red-400 to-rose-600">
+          <div class="soldout hidden bg-gradient-to-b from-red-400 to-rose-600">
             <div class="dozen mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
               <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 We are currently sold out, please try again tomorrow
@@ -330,8 +330,8 @@ const IndexPage = () => {
             </div>
           </div>
 
-          <div class="hidden bg-gradient-to-b from-cyan-200 to-blue-200">
-            <div class="dozen mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+          <div class=" bg-gradient-to-b from-cyan-200 to-blue-200">
+            <div class="dozen hidden mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
               <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 Available Single Flavor Dozens
               </h1>
@@ -473,7 +473,7 @@ const IndexPage = () => {
                 Available 6 + 6 Assortments
               </h1>
 
-              <div class="mt-10 grid grid-cols-1 gap-y-24 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4">
+              <div class="mt-10 grid grid-cols-1 gap-y-24 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
                 <a
                   href="https://buy.stripe.com/fZe28jdtP1Mk9aweVh"
                   target="_blank"
@@ -570,70 +570,7 @@ const IndexPage = () => {
                     </a>
                   </div>
                 </a>
-                <a
-                  href="https://buy.stripe.com/aEU3cn89v62AfyU14q"
-                  target="_blank"
-                  class="hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/bff36e60-d67a-11ee-9ce5-59949019255e-velvet-smores.png"
-                        alt="Red Velvet Smores"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Red Velvet + <span class="block">Smores</span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">6 + 6</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
 
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a
-                  href="https://buy.stripe.com/8wM14f4XjfDa86s14p"
-                  target="_blank"
-                  class="hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/e52cb290-d67a-11ee-9ce5-59949019255e-smores-choc.png"
-                        alt="Smores Chocolate"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Smores + <span class="block">Chocolate Chip</span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">6 + 6</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
                 <a
                   href="https://buy.stripe.com/28oeV575rez6biE6oB"
                   target="_blank"
@@ -666,38 +603,7 @@ const IndexPage = () => {
                     </a>
                   </div>
                 </a>
-                <a
-                  href="https://buy.stripe.com/6oEeV5dtPdv20E03cw"
-                  target="_blank"
-                  class="hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/3daea040-d67b-11ee-9ce5-59949019255e-lemon-smores.png"
-                        alt="Lemon Smores"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Lemon + <span class="block">Smores</span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">6 + 6</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
 
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
                 <a
                   href="https://buy.stripe.com/cN2aEPblHgHecmIeVd"
                   target="_blank"
