@@ -23,10 +23,10 @@ const IndexPage = () => {
         <div class="sticky top-0 z-50 flex items-center gap-x-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
           <p class="text-sm leading-6 text-white">
             <a>
-              <strong class="hidden text-2xl font-semibold">
+              <strong class=" text-2xl font-semibold">
                 ORDERS WILL BE SHIPPED WITHIN 7-10 DAYS FOR FREE!
               </strong>
-              <strong class="text-2xl font-semibold">
+              <strong class="hidden text-2xl font-semibold">
                 CURRENTLY NOT TAKING ORDERS WHILE WE PREPARE FOR DESSERT WARS
                 JUNE 1ST!!🧁🍰🍮
               </strong>
@@ -194,7 +194,7 @@ const IndexPage = () => {
                       seeing a cookie review from you!
                     </p>
                   </div>
-                  <div class="hidden mt-10 flex items-center gap-x-6">
+                  <div class=" mt-10 flex items-center gap-x-6">
                     <AnchorLink
                       class="w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
                       href="#menu"
@@ -208,7 +208,7 @@ const IndexPage = () => {
           </div>
         </div>
         <section id="menu">
-          <div class="soldout bg-gradient-to-b from-red-400 to-rose-600">
+          <div class="hidden soldout bg-gradient-to-b from-red-400 to-rose-600">
             <div class="dozen mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
               <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 CURRENTLY NOT TAKING ORDERS
@@ -335,7 +335,7 @@ const IndexPage = () => {
             </div>
           </div>
 
-          <div class="hidden bg-gradient-to-b from-cyan-200 to-blue-200">
+          <div class="bg-gradient-to-b from-cyan-200 to-blue-200">
             <div class="dozen hidden mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
               <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 Available Single Flavor Dozens
