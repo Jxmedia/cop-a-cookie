@@ -482,7 +482,7 @@ const IndexPage = () => {
                 <a
                   href="https://buy.stripe.com/fZe28jdtP1Mk9aweVh"
                   target="_blank"
-                  class="hover:opacity-80"
+                  class="hover:opacity-80 hidden"
                 >
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
@@ -514,7 +514,7 @@ const IndexPage = () => {
                 <a
                   href="https://buy.stripe.com/fZecMXdtP9eM5Yk7sB"
                   target="_blank"
-                  class="hover:opacity-80"
+                  class="hover:opacity-80 hidden"
                 >
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
@@ -579,7 +579,7 @@ const IndexPage = () => {
                 <a
                   href="https://buy.stripe.com/28oeV575rez6biE6oB"
                   target="_blank"
-                  class="hover:opacity-80"
+                  class="hover:opacity-80 hidden"
                 >
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
@@ -652,7 +652,7 @@ const IndexPage = () => {
                 <a
                   href="https://buy.stripe.com/dR600b1L78aIeuQ8wO"
                   target="_blank"
-                  class="hover:opacity-80"
+                  class="hover:opacity-80 hidden"
                 >
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
@@ -685,7 +685,7 @@ const IndexPage = () => {
                 <a
                   href="https://buy.stripe.com/9AQ8wHexT1MkbiEcN1"
                   target="_blank"
-                  class="hover:opacity-80"
+                  class="hover:opacity-80 hidden"
                 >
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
