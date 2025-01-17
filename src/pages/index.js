@@ -551,7 +551,7 @@ const IndexPage = () => {
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
-                        src="https://imgix.cosmicjs.com/16c1db40-c128-11ee-9fc1-4bb6168d3a2d-velvet-choc.png"
+                        src="https://imgix.cosmicjs.com/15d6a8d0-d4c5-11ef-bee4-3bb1d3c55332-Choc-velvet.jpg"
                         alt="Red Velvet Chocolate"
                         class="rounded-3xl h-full w-full object-cover object-center"
                       />
@@ -617,7 +617,7 @@ const IndexPage = () => {
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
-                        src="https://imgix.cosmicjs.com/84fbf3d0-d67b-11ee-9ce5-59949019255e-velvet-lemon.png"
+                        src="https://imgix.cosmicjs.com/15d59760-d4c5-11ef-bee4-3bb1d3c55332-Lemon-velvet.jpg"
                         alt="Lemon Velvet"
                         class="rounded-3xl h-full w-full object-cover object-center"
                       />
@@ -821,7 +821,7 @@ const IndexPage = () => {
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
-                        src="https://imgix.cosmicjs.com/035c6660-d67c-11ee-9ce5-59949019255e-choc-lemon-smores.png"
+                        src="https://imgix.cosmicjs.com/15d76c20-d4c5-11ef-bee4-3bb1d3c55332-Choc-lemon-smore.jpg"
                         alt="Chocolate Lemon Smores"
                         class="rounded-3xl h-full w-full object-cover object-center"
                       />
