@@ -821,7 +821,7 @@ const IndexPage = () => {
                   <div class="relative">
                     <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
                       <img
-                        src="https://imgix.cosmicjs.com/15d76c20-d4c5-11ef-bee4-3bb1d3c55332-Choc-lemon-smore.jpg"
+                        src="https://imgix.cosmicjs.com/eb1a1ec0-d4c8-11ef-bee4-3bb1d3c55332-Choc-lemon-smore.jpg"
                         alt="Chocolate Lemon Smores"
                         class="rounded-3xl h-full w-full object-cover object-center"
                       />
