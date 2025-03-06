@@ -1,10 +1,46 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { Link } from "gatsby";
 
 const IndexPage = () => {
   const [isBannerOpened, setisBannerOpened] = useState(true);
+  //
+  //
+  //
+  const products = [
+    {
+      id: 1,
+      name: "Red Velvet",
+
+      href: "#",
+      imageSrc:
+        "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png",
+      imageAlt: "Red Velvet Cookie",
+      price: "$4",
+    },
+    {
+      id: 2,
+      name: "Chocolate Chip",
+
+      href: "#",
+      imageSrc:
+        "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png",
+      imageAlt: "Chocolate Chip Cookie",
+      price: "$4",
+    },
+    {
+      id: 3,
+      name: "Lemon",
+
+      href: "#",
+      imageSrc:
+        "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png",
+      imageAlt: "Lemon Cookie",
+      price: "$4",
+    },
+    // More products...
+  ];
+  //
   //
   return (
     <>
@@ -20,7 +56,7 @@ const IndexPage = () => {
       </Helmet>
 
       {isBannerOpened === true ? (
-        <div class="sticky top-0 z-50 flex items-center gap-x-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+        <div class="sticky top-0 z-50 flex items-center gap-x-6 bg-amber-400 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
           <p class="text-sm leading-6 text-white">
             <a>
               <strong class=" text-2xl font-semibold">
@@ -59,27 +95,27 @@ const IndexPage = () => {
         <div></div>
       )}
       <div class="">
-        <div class="hidden md:block relative isolate overflow-hidden bg-sky-200">
+        <div class="hidden md:block relative isolate overflow-hidden bg-blue-500">
           <div class="mx-auto items-center max-w-7xl px-6 pt-10 pb-10 lg:flex lg:px-8">
             <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-              <h1 class="mt-6 text-4xl font-bold tracking-tight text-sky-900 sm:text-6xl">
+              <h1 class="mt-6 text-4xl font-bold tracking-tight text-white sm:text-6xl">
                 HANDMADE COOKIES DELIVERED TO YOUR DOORSTEP
               </h1>
-              <p class="mt-6 text-lg leading-8 text-gray-600">
+              <p class="mt-6 text-lg leading-8 text-white">
                 Indulge your senses in the warm embrace of freshly baked
                 cookies—soft, gooey centers, golden edges, and a heavenly aroma
                 that whispers sweet promises of delight.
               </p>
               <div class="mt-10 flex items-center gap-x-6">
                 <AnchorLink
-                  class="w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
+                  class="w-1/2 text-center rounded-full bg-blue-700 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-white hover:text-blue-700"
                   href="#menu"
                 >
                   ORDER NOW
                 </AnchorLink>
 
                 <AnchorLink
-                  class="w-1/2 text-center rounded-md bg-white px-9 py-4 text-xl font-semibold text-blue-600 shadow-sm hover:opacity-70"
+                  class="w-1/2 text-center rounded-full bg-white px-9 py-4 text-xl font-semibold text-blue-600 shadow-sm hover:opacity-70"
                   href="#contact"
                 >
                   CONTACT
@@ -121,14 +157,14 @@ const IndexPage = () => {
               </p>
               <div class="mt-10 flex items-center gap-x-6">
                 <AnchorLink
-                  class="w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
+                  class="w-1/2 text-center rounded-full bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
                   href="#menu"
                 >
                   ORDER NOW
                 </AnchorLink>
 
                 <AnchorLink
-                  class="w-1/2 text-center rounded-md bg-white px-9 py-4 text-xl font-semibold text-blue-600 shadow-sm hover:opacity-70"
+                  class="w-1/2 text-center rounded-full bg-white px-9 py-4 text-xl font-semibold text-blue-600 shadow-sm hover:opacity-70"
                   href="#contact"
                 >
                   CONTACT
@@ -138,7 +174,7 @@ const IndexPage = () => {
           </div>
         </div>
 
-        <div class="bg-white py-24 sm:py-32">
+        <div class="bg-gray-50 py-24 sm:py-32">
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
               <div class="lg:pr-4">
@@ -196,7 +232,7 @@ const IndexPage = () => {
                   </div>
                   <div class=" mt-10 flex items-center gap-x-6">
                     <AnchorLink
-                      class="w-1/2 text-center rounded-md bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
+                      class="w-1/2 text-center rounded-full bg-blue-600 px-9 py-4 text-xl font-semibold text-white shadow-sm hover:bg-blue-500"
                       href="#menu"
                     >
                       ORDER NOW
@@ -207,6 +243,127 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
+
+        <section id="">
+          <div className="isolate px-6 py-10">
+            <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+              <h2 className="text-center text-6xl font-bold text-gray-900">
+                Available Flavors{" "}
+              </h2>
+              <h3 className="text-red-600 text-2xl text-center font-medium">
+                (Dozen minimum)
+              </h3>
+
+              <div className="mt-20 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
+                {products.map((product) => (
+                  <div key={product.id}>
+                    <div className="relative">
+                      <div className="relative h-72 w-full overflow-hidden rounded-lg">
+                        <img
+                          alt={product.imageAlt}
+                          src={product.imageSrc}
+                          className="size-full object-cover"
+                        />
+                      </div>
+                      <div className="text-center relative mt-6">
+                        <h3 className="text-2xl font-bold text-indigo-600">
+                          {product.name}
+                        </h3>
+                      </div>
+                      <div className="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
+                        <div
+                          aria-hidden="true"
+                          className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-gray-500 opacity-50"
+                        />
+                        <p className="relative text-3xl font-semibold bg-rose-600 p-4 rounded-full text-white">
+                          {product.price}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mt-6">
+                      <div class="flex items-center w-full mx-auto justify-center">
+                        <button class="bg-white group rounded-l-full px-6 py-[18px] border border-gray-500 flex items-center justify-center shadow-sm shadow-transparent transition-all duration-500 hover:shadow-gray-200 hover:border-gray-300 hover:bg-gray-50">
+                          <svg
+                            class="stroke-gray-900 transition-all duration-500 group-hover:stroke-black"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="22"
+                            height="22"
+                            viewBox="0 0 22 22"
+                            fill="none"
+                          >
+                            <path
+                              d="M16.5 11H5.5"
+                              stroke=""
+                              stroke-width="1.6"
+                              stroke-linecap="round"
+                            />
+                            <path
+                              d="M16.5 11H5.5"
+                              stroke=""
+                              stroke-opacity="0.2"
+                              stroke-width="1.6"
+                              stroke-linecap="round"
+                            />
+                            <path
+                              d="M16.5 11H5.5"
+                              stroke=""
+                              stroke-opacity="0.2"
+                              stroke-width="1.6"
+                              stroke-linecap="round"
+                            />
+                          </svg>
+                        </button>
+                        <input
+                          type="text"
+                          class="bg-white border-y border-gray-500 outline-none text-gray-900 font-semibold text-lg w-full max-w-[118px] min-w-[80px] placeholder:text-gray-900 py-[15px] text-center bg-transparent"
+                          placeholder="0"
+                        />
+                        <button class="bg-white group rounded-r-full px-6 py-[18px] border border-gray-500 flex items-center justify-center shadow-sm shadow-transparent transition-all duration-500 hover:shadow-gray-200 hover:border-gray-300 hover:bg-gray-50">
+                          <svg
+                            class="stroke-gray-900 transition-all duration-500 group-hover:stroke-black"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="22"
+                            height="22"
+                            viewBox="0 0 22 22"
+                            fill="none"
+                          >
+                            <path
+                              d="M11 5.5V16.5M16.5 11H5.5"
+                              stroke=""
+                              stroke-width="1.6"
+                              stroke-linecap="round"
+                            />
+                            <path
+                              d="M11 5.5V16.5M16.5 11H5.5"
+                              stroke=""
+                              stroke-opacity="0.2"
+                              stroke-width="1.6"
+                              stroke-linecap="round"
+                            />
+                            <path
+                              d="M11 5.5V16.5M16.5 11H5.5"
+                              stroke=""
+                              stroke-opacity="0.2"
+                              stroke-width="1.6"
+                              stroke-linecap="round"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <button
+              type="submit"
+              className="w-full rounded-full border border-transparent bg-blue-600 py-5 px-4 py-2 text-4xl font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+            >
+              Add 12 more cookies
+            </button>
+          </div>
+        </section>
+
         <section id="menu">
           <div class="hidden soldout bg-gradient-to-b from-red-400 to-rose-600">
             <div class="dozen mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
@@ -1015,7 +1172,7 @@ const IndexPage = () => {
               <div class="mt-10">
                 <button
                   type="submit"
-                  class="block w-full rounded-md bg-blue-600 px-3.5 py-3 text-center text-lg font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                  class="block w-full rounded-full bg-blue-600 px-3.5 py-3 text-center text-lg font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                 >
                   Let's talk
                 </button>
