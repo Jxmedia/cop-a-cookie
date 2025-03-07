@@ -96,41 +96,6 @@ const PaymentForm = (props) => {
     setIsLoading(false);
   };
 
-  const bankSubmit = async (e) => {
-    e.preventDefault();
-
-    const bankCharge = await fetch("/.netlify/functions/bank-payment/", {
-      //http://localhost:8888/.netlify/functions/bank-payment//
-      //https://ugecredits.com/.netlify/functions/bank-payment///
-      method: "POST",
-      body: JSON.stringify({
-        amount: Math.round(stripeCost),
-        customer: props.customer,
-        recurring: recurringDescription,
-        token: bankToken,
-        paymentIntent: props.paymentIntent.id,
-      }),
-    });
-    const bankResult = await bankCharge.json().then(() => {
-      window.location.href = `https://gogreencredits.com/offset-confirmation?f=${
-        dataForm.firstName
-      }&l=${dataForm.lastName}&a=${
-        dataForm.billingAddress + " " + dataForm.billingSuite
-      }&ac=${
-        dataForm.billingCity +
-        "," +
-        " " +
-        dataForm.billingState +
-        " " +
-        dataForm.billingZip
-      }&c=${dataForm.companyName}&p=${formatPhoneNumber(dataForm.phone)}&e=${
-        dataForm.email
-      }&cost=${finalPrice}&energy=${props.energy.toFixed(
-        2
-      )}&pr=${finalPrice}&r=${recurringConversion}`;
-    });
-  };
-
   console.log(dataForm);
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
@@ -11,7 +11,16 @@ const IndexPage = () => {
     lemon: 0,
   });
   //
+  //
+  //
+  useEffect(() => {
+    window.localStorage.clear();
+  }, []);
+  //
+  //
+  //
   ////
+
   //////////// Red Velvet
   //
   const redVelvetincrement = () => {
@@ -120,7 +129,7 @@ const IndexPage = () => {
       imageSrc:
         "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png",
       imageAlt: "Red Velvet Cookie",
-      price: "$4",
+      price: "$5",
     },
     {
       id: 2,
@@ -132,7 +141,7 @@ const IndexPage = () => {
       imageSrc:
         "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png",
       imageAlt: "Chocolate Chip Cookie",
-      price: "$4",
+      price: "$5",
     },
     {
       id: 3,
@@ -144,20 +153,31 @@ const IndexPage = () => {
       imageSrc:
         "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png",
       imageAlt: "Lemon Cookie",
-      price: "$4",
+      price: "$5",
     },
     // More cookies...
   ];
   //
-  //
-
-  console.log(Object.values(cookieOrder).reduce((a, b) => a + b, 0));
   //
   //
   const cookieMin = Object.values(cookieOrder).reduce((a, b) => a + b, 0);
   //
 
   console.log(cookieOrder);
+  //
+  //
+  //
+  function checkout() {
+    window.localStorage.setItem(
+      "COOKIE_ORDER",
+      JSON.stringify({
+        cookieOrder,
+      })
+    );
+
+    window.location.href = `/checkout`;
+  }
+  //
   //
   //
   return (
@@ -498,7 +518,7 @@ const IndexPage = () => {
               </div>
             </div>
             <button
-              type="submit"
+              onClick={() => checkout()}
               disabled={cookieMin <= 12}
               class={`w-full rounded-full border border-transparent py-5 px-4 py-2 text-3xl font-medium text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-50 ${
                 cookieMin <= 12
@@ -523,702 +543,6 @@ const IndexPage = () => {
                   <span class="block">🍨 🥧 🧁 🍰 🍮</span>
                 </span>
               </h1>
-
-              <div class="saturate-0 mt-10 grid grid-cols-1 gap-y-32 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4">
-                <a class="opacity-80">
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/c814b580-bb8c-11ee-9be1-85f53db06a1d-red-velvet.png"
-                        alt="Red Velvet dozen"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Red Velvet
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a class="opacity-80">
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/db0aa980-d679-11ee-9ce5-59949019255e-lemon.png"
-                        alt="Lemon Dozen"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="items-center text-3xl font-semibold text-gray-900">
-                        Lemon{" "}
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a class="opacity-80">
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/57296750-bd3d-11ee-9fc1-4bb6168d3a2d-biscoff.png"
-                        alt="Biscoff Dozen"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Biscoff
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a class="opacity-80">
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/5714f4f0-bd3d-11ee-9fc1-4bb6168d3a2d-chocolate.png"
-                        alt="Chocolate Chip dozen"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Chocolate Chip
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-gradient-to-b from-cyan-200 to-blue-200">
-            <div class="dozen hidden mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-              <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Available Single Flavor Dozens
-              </h1>
-
-              <div class="mt-10 grid grid-cols-1 gap-y-32 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4">
-                <a
-                  href="https://buy.stripe.com/dR6aEP3Tfez672o5kr"
-                  target="_blank"
-                  class="hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/c814b580-bb8c-11ee-9be1-85f53db06a1d-red-velvet.png"
-                        alt="Red Velvet dozen"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Red Velvet
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a
-                  href="https://buy.stripe.com/9AQfZ92Pb1Mk1I428w"
-                  target="_blank"
-                  class="hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/db0aa980-d679-11ee-9ce5-59949019255e-lemon.png"
-                        alt="Lemon Dozen"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="items-center text-3xl font-semibold text-gray-900">
-                        Lemon{" "}
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a
-                  href="https://buy.stripe.com/fZebITcpL0Ig86s4gl"
-                  target="_blank"
-                  class="hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/57296750-bd3d-11ee-9fc1-4bb6168d3a2d-biscoff.png"
-                        alt="Biscoff Dozen"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Biscoff
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a
-                  href="https://buy.stripe.com/5kAdR161n4YwbiEcMQ"
-                  target="_blank"
-                  class="hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/5714f4f0-bd3d-11ee-9fc1-4bb6168d3a2d-chocolate.png"
-                        alt="Chocolate Chip dozen"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Chocolate Chip
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">Full Dozen</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="6x6 mx-auto max-w-2xl px-4 py-16 sm:px-6 lg:max-w-7xl lg:px-8">
-              <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Available 6 + 6 Assortments
-              </h1>
-
-              <div class="mt-10 grid grid-cols-1 gap-y-24 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
-                <a
-                  href="https://buy.stripe.com/fZe28jdtP1Mk9aweVh"
-                  target="_blank"
-                  class="hover:opacity-80 hidden"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/8e35aaa0-d67a-11ee-9ce5-59949019255e-lemon-bisc.png"
-                        alt="Lemon Biscoff"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Lemon + <span class="block">Biscoff</span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">6 + 6</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a
-                  href="https://buy.stripe.com/fZecMXdtP9eM5Yk7sB"
-                  target="_blank"
-                  class="hover:opacity-80 hidden"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/16f5e390-c128-11ee-9fc1-4bb6168d3a2d-velvet-biscoff.png"
-                        alt="Red Velvet Biscoff"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Red Velvet + <span class="block">Biscoff</span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">6 + 6</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a
-                  href="https://buy.stripe.com/3cs9AL75raiQ5Yk14e"
-                  target="_blank"
-                  class="hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/15d6a8d0-d4c5-11ef-bee4-3bb1d3c55332-Choc-velvet.jpg"
-                        alt="Red Velvet Chocolate"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Red Velvet + <span class="block">Chocolate Chip</span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">6 + 6</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-
-                <a
-                  href="https://buy.stripe.com/28oeV575rez6biE6oB"
-                  target="_blank"
-                  class="hover:opacity-80 hidden"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/16c4c170-c128-11ee-9fc1-4bb6168d3a2d-bisc-choc.png"
-                        alt="Biscoff Chocolate"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Biscoff + <span class="block">Chocolate Chip</span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">6 + 6</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-
-                <a
-                  href="https://buy.stripe.com/cN2aEPblHgHecmIeVd"
-                  target="_blank"
-                  class="hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/15d59760-d4c5-11ef-bee4-3bb1d3c55332-Lemon-velvet.jpg"
-                        alt="Lemon Velvet"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Red Velvet + <span class="block">Lemon</span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">6 + 6</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a
-                  href="https://buy.stripe.com/fZeeV5ahDdv2aeAbJ7"
-                  target="_blank"
-                  class="hidden hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/933f2e30-8431-11ef-bf3c-e1a053e2b56b-pump-choc.png"
-                        alt="Pumpkin + Choc"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Pumpkin + <span class="block">Chocolate Chip</span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">6 + 6</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-
-                <a
-                  href="https://buy.stripe.com/3csaEP9dz8aI2M85kK"
-                  target="_blank"
-                  class="hidden hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/931f7130-8431-11ef-bf3c-e1a053e2b56b-pump-velv.png"
-                        alt="Pumpkin + Velv"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Pumpkin + <span class="block">Red Velvet</span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">6 + 6</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-
-                <a
-                  href="https://buy.stripe.com/28o8wH61nbmU9aw00r"
-                  target="_blank"
-                  class="hidden hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/93890870-8431-11ef-bf3c-e1a053e2b56b-pump-lemon.png"
-                        alt="Pumpkin + Lemon"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Pumpkin + <span class="block">Lemon</span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">6 + 6</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="4x4 mx-auto max-w-2xl px-4 py-16 sm:px-6 lg:max-w-7xl lg:px-8">
-              <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Available 4 + 4 + 4 Assortments
-              </h1>
-
-              <div class="mt-10 grid grid-cols-1 gap-y-24 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3">
-                <a
-                  href="https://buy.stripe.com/dR600b1L78aIeuQ8wO"
-                  target="_blank"
-                  class="hover:opacity-80 hidden"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/d8b70aa0-d67b-11ee-9ce5-59949019255e-velvet-lemon-bisc.png"
-                        alt="Red Velvet Black Forest Bisc"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Red Velvet + <span class="block">Lemon + </span>
-                        <span class="block">Biscoff </span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">4 + 4 + 4</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a
-                  href="https://buy.stripe.com/9AQ8wHexT1MkbiEcN1"
-                  target="_blank"
-                  class="hover:opacity-80 hidden"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/16edf450-c128-11ee-9fc1-4bb6168d3a2d-rv-bisc-choc.png"
-                        alt="Red Velvet Biscoff Choc"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Red Velvet + <span class="block">Biscoff + </span>
-                        <span class="block">Chocolate Chip </span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">4 + 4 + 4</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a
-                  href="https://buy.stripe.com/4gw7sDahD9eMeuQ4gx"
-                  target="_blank"
-                  class="hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/eb1a1ec0-d4c8-11ef-bee4-3bb1d3c55332-Choc-lemon-smore.jpg"
-                        alt="Chocolate Lemon Smores"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Chocolate Chip + <span class="block">Lemon + </span>
-                        <span class="block">Smores</span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">4 + 4 + 4</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-blue-600 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a
-                  href="https://buy.stripe.com/00gfZ99dzbmU0E04gI"
-                  target="_blank"
-                  class="hidden hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/93bf33a0-8431-11ef-bf3c-e1a053e2b56b-pump-choc-lemon.png"
-                        alt="Pumpkin Lemon Chocolate"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Pumpkin + <span class="block">Lemon + </span>
-                        <span class="block">Chocolate Chip</span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">4 + 4 + 4</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-                <a
-                  href="https://buy.stripe.com/3csaEP3Tf0IgeuQfZr"
-                  target="_blank"
-                  class="hidden hover:opacity-80"
-                >
-                  <div class="relative">
-                    <div class="relative w-full overflow-hidden rounded-3xl bg-sky-50 p-4">
-                      <img
-                        src="https://imgix.cosmicjs.com/93c8d090-8431-11ef-bf3c-e1a053e2b56b-velvet-pump-smores.png"
-                        alt="Pumpkin Velvet Smores"
-                        class="rounded-3xl h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div class="relative mt-4 text-center">
-                      <h3 class="text-3xl font-semibold text-gray-900">
-                        Pumpkin + <span class="block">Red Velvet + </span>
-                        <span class="block">Smores</span>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-800">4 + 4 + 4</p>
-                    </div>
-                    <div class="absolute inset-x-0 top-0 flex items-end justify-end overflow-hidden">
-                      <p class="relative text-5xl font-semibold text-white bg-yellow-400 rounded-bl-3xl p-4">
-                        $60
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-6">
-                    <a class="relative flex items-center justify-center rounded-md border border-transparent bg-orange-400 px-8 py-3 text-lg font-semibold text-gray-900 ">
-                      Order Now
-                    </a>
-                  </div>
-                </a>
-              </div>
             </div>
           </div>
         </section>
