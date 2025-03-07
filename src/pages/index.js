@@ -5,14 +5,118 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 const IndexPage = () => {
   const [isBannerOpened, setisBannerOpened] = useState(true);
   //
+  const [cookieOrder, setcookieOrder] = useState({
+    redVelvet: 0,
+    chocChip: 0,
+    lemon: 0,
+  });
+  //
+  ////
+  //////////// Red Velvet
+  //
+  const redVelvetincrement = () => {
+    if (cookieOrder.redVelvet === 50) {
+      setcookieOrder({
+        ...cookieOrder,
+        redVelvet: 50,
+      });
+    } else
+      setcookieOrder({
+        ...cookieOrder,
+        redVelvet: cookieOrder.redVelvet + 1,
+      });
+  };
+
+  const redVelvetdecrement = () => {
+    if (cookieOrder.redVelvet === 0) {
+      setcookieOrder({
+        ...cookieOrder,
+        redVelvet: 0,
+      });
+    } else {
+      setcookieOrder({
+        ...cookieOrder,
+        redVelvet: cookieOrder.redVelvet - 1,
+      });
+    }
+  };
+  //
+  //////////////////////////////
   //
   //
-  const products = [
+  //////////// Chocolate Chip
+  //
+  const chocChipincrement = () => {
+    if (cookieOrder.chocChip === 50) {
+      setcookieOrder({
+        ...cookieOrder,
+        chocChip: 50,
+      });
+    } else
+      setcookieOrder({
+        ...cookieOrder,
+        chocChip: cookieOrder.chocChip + 1,
+      });
+  };
+
+  const chocChipdecrement = () => {
+    if (cookieOrder.chocChip === 0) {
+      setcookieOrder({
+        ...cookieOrder,
+        chocChip: 0,
+      });
+    } else {
+      setcookieOrder({
+        ...cookieOrder,
+        chocChip: cookieOrder.chocChip - 1,
+      });
+    }
+  };
+  //
+  //////////////////////////////
+  //
+  //
+  //
+  //////////// Lemon
+  //
+  const lemonincrement = () => {
+    if (cookieOrder.lemon === 50) {
+      setcookieOrder({
+        ...cookieOrder,
+        lemon: 50,
+      });
+    } else
+      setcookieOrder({
+        ...cookieOrder,
+        lemon: cookieOrder.lemon + 1,
+      });
+  };
+
+  const lemondecrement = () => {
+    if (cookieOrder.lemon === 0) {
+      setcookieOrder({
+        ...cookieOrder,
+        lemon: 0,
+      });
+    } else {
+      setcookieOrder({
+        ...cookieOrder,
+        lemon: cookieOrder.lemon - 1,
+      });
+    }
+  };
+  //
+  //////////////////////////////
+  //
+  //
+  const cookies = [
     {
       id: 1,
       name: "Red Velvet",
+      incrementFunc: () => redVelvetincrement(),
+      decrementFunc: () => redVelvetdecrement(),
+      count: cookieOrder.redVelvet,
 
-      href: "#",
       imageSrc:
         "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png",
       imageAlt: "Red Velvet Cookie",
@@ -21,8 +125,10 @@ const IndexPage = () => {
     {
       id: 2,
       name: "Chocolate Chip",
+      incrementFunc: () => chocChipincrement(),
+      decrementFunc: () => chocChipdecrement(),
+      count: cookieOrder.chocChip,
 
-      href: "#",
       imageSrc:
         "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png",
       imageAlt: "Chocolate Chip Cookie",
@@ -31,15 +137,27 @@ const IndexPage = () => {
     {
       id: 3,
       name: "Lemon",
+      incrementFunc: () => lemonincrement(),
+      decrementFunc: () => lemondecrement(),
+      count: cookieOrder.lemon,
 
-      href: "#",
       imageSrc:
         "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png",
       imageAlt: "Lemon Cookie",
       price: "$4",
     },
-    // More products...
+    // More cookies...
   ];
+  //
+  //
+
+  console.log(Object.values(cookieOrder).reduce((a, b) => a + b, 0));
+  //
+  //
+  const cookieMin = Object.values(cookieOrder).reduce((a, b) => a + b, 0);
+  //
+
+  console.log(cookieOrder);
   //
   //
   return (
@@ -255,7 +373,7 @@ const IndexPage = () => {
               </h3>
 
               <div className="mt-20 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
-                {products.map((product) => (
+                {cookies.map((product) => (
                   <div key={product.id}>
                     <div className="relative">
                       <div className="relative h-72 w-full overflow-hidden rounded-lg">
@@ -282,9 +400,21 @@ const IndexPage = () => {
                     </div>
                     <div className="mt-6">
                       <div class="flex items-center w-full mx-auto justify-center">
-                        <button class="bg-white group rounded-l-full px-6 py-[18px] border border-gray-500 flex items-center justify-center shadow-sm shadow-transparent transition-all duration-500 hover:shadow-gray-200 hover:border-gray-300 hover:bg-gray-50">
+                        <button
+                          disabled={product.count === 0}
+                          onClick={() => product.decrementFunc()}
+                          class={`bg-white group rounded-l-full px-6 py-[18px] border flex items-center justify-center shadow-sm shadow-transparent transition-all duration-500 ${
+                            product.count === 0
+                              ? "border border-gray-300"
+                              : " border border-gray-500 hover:shadow-gray-200 hover:border-gray-300 hover:bg-gray-50"
+                          }`}
+                        >
                           <svg
-                            class="stroke-gray-900 transition-all duration-500 group-hover:stroke-black"
+                            class={`transition-all duration-500 group-hover:stroke-black ${
+                              product.count === 0
+                                ? "stroke-gray-300"
+                                : "stroke-gray-900"
+                            }`}
                             xmlns="http://www.w3.org/2000/svg"
                             width="22"
                             height="22"
@@ -316,11 +446,23 @@ const IndexPage = () => {
                         <input
                           type="text"
                           class="bg-white border-y border-gray-500 outline-none text-gray-900 font-semibold text-lg w-full max-w-[118px] min-w-[80px] placeholder:text-gray-900 py-[15px] text-center bg-transparent"
-                          placeholder="0"
+                          value={product.count}
                         />
-                        <button class="bg-white group rounded-r-full px-6 py-[18px] border border-gray-500 flex items-center justify-center shadow-sm shadow-transparent transition-all duration-500 hover:shadow-gray-200 hover:border-gray-300 hover:bg-gray-50">
+                        <button
+                          disabled={product.count === 50}
+                          onClick={() => product.incrementFunc()}
+                          class={`bg-white group rounded-r-full px-6 py-[18px] border flex items-center justify-center shadow-sm shadow-transparent transition-all duration-500 ${
+                            product.count === 50
+                              ? "border border-gray-300"
+                              : " border border-gray-500 hover:shadow-gray-200 hover:border-gray-300 hover:bg-gray-50"
+                          }`}
+                        >
                           <svg
-                            class="stroke-gray-900 transition-all duration-500 group-hover:stroke-black"
+                            class={`transition-all duration-500 group-hover:stroke-black ${
+                              product.count === 50
+                                ? "stroke-gray-300"
+                                : "stroke-gray-900"
+                            }`}
                             xmlns="http://www.w3.org/2000/svg"
                             width="22"
                             height="22"
@@ -357,9 +499,16 @@ const IndexPage = () => {
             </div>
             <button
               type="submit"
-              className="w-full rounded-full border border-transparent bg-blue-600 py-5 px-4 py-2 text-4xl font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+              disabled={cookieMin <= 12}
+              class={`w-full rounded-full border border-transparent py-5 px-4 py-2 text-3xl font-medium text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-50 ${
+                cookieMin <= 12
+                  ? "bg-gray-400"
+                  : "bg-blue-600 hover:bg-blue-700"
+              }`}
             >
-              Add 12 more cookies
+              {cookieMin <= 12
+                ? ` Add ${12 - cookieMin} more cookies`
+                : "Checkout"}
             </button>
           </div>
         </section>

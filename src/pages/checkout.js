@@ -100,13 +100,13 @@ export default function Example() {
           <h2 className="sr-only">Checkout</h2>
 
           <div class="">
-            <div class="">
+            <a href="/" class="hover:opacity-70">
               <img
                 src="https://imgix.cosmicjs.com/49483c30-fa16-11ef-97be-337de38c2241-Main-logo-word-flat.png"
                 alt="Cop Logo"
                 class="w-1/2 mx-auto mb-20 mix-blend-multiply"
               />
-            </div>
+            </a>
           </div>
           <form className="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-16">
             <div>
