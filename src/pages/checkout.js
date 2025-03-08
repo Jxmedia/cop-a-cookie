@@ -11,42 +11,16 @@ const PUBLIC_KEY =
 
 const stripePromise = loadStripe(PUBLIC_KEY);
 
-const deliveryMethods = [
-  {
-    id: 1,
-    title: "Standard",
-    turnaround: "4–10 business days",
-    price: "$5.00",
-  },
-  { id: 2, title: "Express", turnaround: "2–5 business days", price: "$16.00" },
-];
-const paymentMethods = [
-  { id: "credit-card", title: "Credit card" },
-  { id: "paypal", title: "PayPal" },
-  { id: "etransfer", title: "eTransfer" },
-];
-
 export default function Example(props) {
-  const [selectedDeliveryMethod, setSelectedDeliveryMethod] = useState(
-    deliveryMethods[0]
-  );
-
   const [isBannerOpened, setisBannerOpened] = useState(true);
 
-  const [shippingCheck, setShippingCheck] = useState(false);
   const [clientSecret, setClientSecret] = useState("");
   const [paymentIntent, setPaymentIntent] = useState("");
-  const [stripeLoading, setStripeLoading] = useState(false);
+
   const [foundCookieOrder, setfoundCookieOrder] = useState(0);
 
   console.log(foundCookieOrder.cookieOrder);
 
-  const sumObjectValues = (obj) => {
-    return Object.values(obj).reduce(
-      (accumulator, currentValue) => accumulator + currentValue,
-      0
-    );
-  };
   //
   //
   //
@@ -118,9 +92,8 @@ export default function Example(props) {
     const { paymentIntent } = await intent.json();
 
     console.log(paymentIntent);
-    // setClientSecret(paymentIntent.client_secret);
-    // setPaymentIntent(paymentIntent);
-    // setStripeLoading(false);
+    setClientSecret(paymentIntent.client_secret);
+    setPaymentIntent(paymentIntent);
   };
 
   const options = {
@@ -129,11 +102,11 @@ export default function Example(props) {
     appearance: {
       theme: "minimal",
       variables: {
-        colorBackground: "#bdeaba",
-        colorText: "#07300d",
+        colorBackground: "#d5e8ff",
+        colorText: "black",
         colorDanger: "#df1b41",
         spacingUnit: "5px",
-        borderRadius: "4px",
+        borderRadius: "8px",
         // See all possible variables below
       },
     },
@@ -223,267 +196,283 @@ export default function Example(props) {
           <div className="mx-auto max-w-2xl px-4 pb-24 pt-10 lg:px-6 lg:max-w-7xl lg:px-8">
             <h2 className="sr-only">Checkout</h2>
 
-            <div class="w-1/2 mx-auto">
-              <a href="/" class=" hover:opacity-70">
-                <img
-                  src="https://imgix.cosmicjs.com/49483c30-fa16-11ef-97be-337de38c2241-Main-logo-word-flat.png"
-                  alt="Cop Logo"
-                  class="mx-auto mb-20 mix-blend-multiply"
-                />
-              </a>
-            </div>
+            {clientSecret === "" ? (
+              <div class="w-1/2 mx-auto">
+                <a href="/" class=" hover:opacity-70">
+                  <img
+                    src="https://imgix.cosmicjs.com/49483c30-fa16-11ef-97be-337de38c2241-Main-logo-word-flat.png"
+                    alt="Cop Logo"
+                    class="mx-auto mb-20 mix-blend-multiply"
+                  />
+                </a>
+              </div>
+            ) : (
+              <div class="w-1/6 mx-auto">
+                <a href="/" class=" hover:opacity-70">
+                  <img
+                    src="https://imgix.cosmicjs.com/49483c30-fa16-11ef-97be-337de38c2241-Main-logo-word-flat.png"
+                    alt="Cop Logo"
+                    class="mx-auto mb-10 mix-blend-multiply"
+                  />
+                </a>
+              </div>
+            )}
             <form className="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-16">
-              <div>
+              {clientSecret === "" ? (
                 <div>
-                  <h2 className="text-lg font-medium text-gray-900">
-                    Contact information
-                  </h2>
+                  <div>
+                    <h2 className="text-lg font-medium text-gray-900">
+                      Contact information
+                    </h2>
 
-                  {emailCheck === false ? (
-                    <div class="mt-4 relative rounded-md">
-                      <label
-                        for="name"
-                        class="mb-2 block text-sm font-medium text-orange"
-                      >
-                        Email address <span class="text-red-500">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        onChange={customerChange}
-                        autoComplete="email"
-                        required
-                        class="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6 border border-red-600"
-                      />
-                    </div>
-                  ) : (
-                    <div class="mt-4 relative rounded-md">
-                      <label
-                        for="name"
-                        class="mb-2 block text-sm font-medium text-orange"
-                      >
-                        Email address<span class="text-red-500">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        onChange={customerChange}
-                        autoComplete="email"
-                        required
-                        class="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6 border-emerald-600"
-                      />
-                    </div>
-                  )}
-                </div>
-
-                <div className="mt-10 border-t border-gray-200 pt-10">
-                  <h2 className="text-lg font-medium text-gray-900">
-                    Shipping information
-                  </h2>
-
-                  <div className="mt-4 grid grid-cols-1 gap-y-6 lg:grid-cols-2 lg:gap-x-4">
-                    <div>
-                      <label
-                        htmlFor="firstName"
-                        className="block text-sm/6 font-medium text-gray-700"
-                      >
-                        First name<span class="text-red-500">*</span>
-                      </label>
-                      <div className="mt-2">
-                        <input
-                          name="firstName"
-                          onChange={customerChange}
-                          type="text"
-                          autoComplete="given-name"
-                          className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="lastName"
-                        className="block text-sm/6 font-medium text-gray-700"
-                      >
-                        Last name<span class="text-red-500">*</span>
-                      </label>
-                      <div className="mt-2">
-                        <input
-                          id="lastName"
-                          name="lastName"
-                          onChange={customerChange}
-                          type="text"
-                          autoComplete="family-name"
-                          className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="lg:col-span-2">
-                      <label
-                        htmlFor="shippingAddress"
-                        className="block text-sm/6 font-medium text-gray-700"
-                      >
-                        Address<span class="text-red-500">*</span>
-                      </label>
-                      <div className="mt-2">
-                        <input
-                          name="shippingAddress"
-                          onChange={customerChange}
-                          type="text"
-                          autoComplete="street-address"
-                          className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="lg:col-span-2">
-                      <label
-                        htmlFor="shippingSuite"
-                        className="block text-sm/6 font-medium text-gray-700"
-                      >
-                        Apartment, suite, etc.
-                      </label>
-                      <div className="mt-2">
-                        <input
-                          name="shippingSuite"
-                          onChange={customerChange}
-                          type="text"
-                          className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="shippingCity"
-                        className="block text-sm/6 font-medium text-gray-700"
-                      >
-                        City<span class="text-red-500">*</span>
-                      </label>
-                      <div className="mt-2">
-                        <input
-                          name="shippingCity"
-                          onChange={customerChange}
-                          type="text"
-                          autoComplete="address-level2"
-                          className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="shippingState"
-                        className="block text-sm/6 font-medium text-gray-700"
-                      >
-                        State / Province<span class="text-red-500">*</span>
-                      </label>
-                      <div className="mt-2">
-                        <select
-                          name="shippingState"
-                          onChange={customerChange}
-                          required
-                          class="block w-full rounded-md bg-white px-3 py-2.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
+                    {emailCheck === false ? (
+                      <div class="mt-4 relative rounded-md">
+                        <label
+                          for="name"
+                          class="mb-2 block text-sm font-medium text-orange"
                         >
-                          <option value="0" default selected>
-                            Select State
-                          </option>
-                          <option disabled>------------------</option>
-                          <option value="AL">Alabama</option>
-                          <option value="AK">Alaska</option>
-                          <option value="AZ">Arizona</option>
-                          <option value="AR">Arkansas</option>
-                          <option value="CA">California</option>
-                          <option value="CO">Colorado</option>
-                          <option value="CT">Connecticut</option>
-                          <option value="DE">Delaware</option>
-                          <option value="DC">District Of Columbia</option>
-                          <option value="FL">Florida</option>
-                          <option value="GA">Georgia</option>
-                          <option value="HI">Hawaii</option>
-                          <option value="ID">Idaho</option>
-                          <option value="IL">Illinois</option>
-                          <option value="IN">Indiana</option>
-                          <option value="IA">Iowa</option>
-                          <option value="KS">Kansas</option>
-                          <option value="KY">Kentucky</option>
-                          <option value="LA">Louisiana</option>
-                          <option value="ME">Maine</option>
-                          <option value="MD">Maryland</option>
-                          <option value="MA">Massachusetts</option>
-                          <option value="MI">Michigan</option>
-                          <option value="MN">Minnesota</option>
-                          <option value="MS">Mississippi</option>
-                          <option value="MO">Missouri</option>
-                          <option value="MT">Montana</option>
-                          <option value="NE">Nebraska</option>
-                          <option value="NV">Nevada</option>
-                          <option value="NH">New Hampshire</option>
-                          <option value="NJ">New Jersey</option>
-                          <option value="NM">New Mexico</option>
-                          <option value="NY">New York</option>
-                          <option value="NC">North Carolina</option>
-                          <option value="ND">North Dakota</option>
-                          <option value="OH">Ohio</option>
-                          <option value="OK">Oklahoma</option>
-                          <option value="OR">Oregon</option>
-                          <option value="PA">Pennsylvania</option>
-                          <option value="RI">Rhode Island</option>
-                          <option value="SC">South Carolina</option>
-                          <option value="SD">South Dakota</option>
-                          <option value="TN">Tennessee</option>
-                          <option value="TX">Texas</option>
-                          <option value="UT">Utah</option>
-                          <option value="VT">Vermont</option>
-                          <option value="VA">Virginia</option>
-                          <option value="WA">Washington</option>
-                          <option value="WV">West Virginia</option>
-                          <option value="WI">Wisconsin</option>
-                          <option value="WY">Wyoming</option>
-                          <option hidden>Wyomingsssssssssss</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="shippingZip"
-                        className="block text-sm/6 font-medium text-gray-700"
-                      >
-                        Postal code<span class="text-red-500">*</span>
-                      </label>
-                      <div className="mt-2">
+                          Email address <span class="text-red-500">*</span>
+                        </label>
                         <input
-                          name="shippingZip"
-                          type="text"
+                          type="email"
+                          name="email"
                           onChange={customerChange}
-                          autoComplete="shippingZip"
-                          className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
+                          autoComplete="email"
+                          required
+                          class="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6 border border-red-600"
                         />
                       </div>
-                    </div>
-
-                    <div className="lg:col-span-1">
-                      <label
-                        htmlFor="phone"
-                        className="block text-sm/6 font-medium text-gray-700"
-                      >
-                        Phone
-                      </label>
-                      <div className="mt-2">
+                    ) : (
+                      <div class="mt-4 relative rounded-md">
+                        <label
+                          for="name"
+                          class="mb-2 block text-sm font-medium text-orange"
+                        >
+                          Email address<span class="text-red-500">*</span>
+                        </label>
                         <input
-                          name="phone"
-                          type="text"
+                          type="email"
+                          name="email"
                           onChange={customerChange}
-                          autoComplete="tel"
-                          className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
+                          autoComplete="email"
+                          required
+                          class="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6 border-emerald-600"
                         />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="mt-10 border-t border-gray-200 pt-10">
+                    <h2 className="text-lg font-medium text-gray-900">
+                      Shipping information
+                    </h2>
+
+                    <div className="mt-4 grid grid-cols-1 gap-y-6 lg:grid-cols-2 lg:gap-x-4">
+                      <div>
+                        <label
+                          htmlFor="firstName"
+                          className="block text-sm/6 font-medium text-gray-700"
+                        >
+                          First name<span class="text-red-500">*</span>
+                        </label>
+                        <div className="mt-2">
+                          <input
+                            name="firstName"
+                            onChange={customerChange}
+                            type="text"
+                            autoComplete="given-name"
+                            className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label
+                          htmlFor="lastName"
+                          className="block text-sm/6 font-medium text-gray-700"
+                        >
+                          Last name<span class="text-red-500">*</span>
+                        </label>
+                        <div className="mt-2">
+                          <input
+                            id="lastName"
+                            name="lastName"
+                            onChange={customerChange}
+                            type="text"
+                            autoComplete="family-name"
+                            className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="lg:col-span-2">
+                        <label
+                          htmlFor="shippingAddress"
+                          className="block text-sm/6 font-medium text-gray-700"
+                        >
+                          Address<span class="text-red-500">*</span>
+                        </label>
+                        <div className="mt-2">
+                          <input
+                            name="shippingAddress"
+                            onChange={customerChange}
+                            type="text"
+                            autoComplete="street-address"
+                            className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="lg:col-span-2">
+                        <label
+                          htmlFor="shippingSuite"
+                          className="block text-sm/6 font-medium text-gray-700"
+                        >
+                          Apartment, suite, etc.
+                        </label>
+                        <div className="mt-2">
+                          <input
+                            name="shippingSuite"
+                            onChange={customerChange}
+                            type="text"
+                            className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label
+                          htmlFor="shippingCity"
+                          className="block text-sm/6 font-medium text-gray-700"
+                        >
+                          City<span class="text-red-500">*</span>
+                        </label>
+                        <div className="mt-2">
+                          <input
+                            name="shippingCity"
+                            onChange={customerChange}
+                            type="text"
+                            autoComplete="address-level2"
+                            className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label
+                          htmlFor="shippingState"
+                          className="block text-sm/6 font-medium text-gray-700"
+                        >
+                          State / Province<span class="text-red-500">*</span>
+                        </label>
+                        <div className="mt-2">
+                          <select
+                            name="shippingState"
+                            onChange={customerChange}
+                            required
+                            class="block w-full rounded-md bg-white px-3 py-2.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
+                          >
+                            <option value="0" default selected>
+                              Select State
+                            </option>
+                            <option disabled>------------------</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                            <option hidden>Wyomingsssssssssss</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div>
+                        <label
+                          htmlFor="shippingZip"
+                          className="block text-sm/6 font-medium text-gray-700"
+                        >
+                          Postal code<span class="text-red-500">*</span>
+                        </label>
+                        <div className="mt-2">
+                          <input
+                            name="shippingZip"
+                            type="text"
+                            onChange={customerChange}
+                            autoComplete="shippingZip"
+                            className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="lg:col-span-1">
+                        <label
+                          htmlFor="phone"
+                          className="block text-sm/6 font-medium text-gray-700"
+                        >
+                          Phone
+                        </label>
+                        <div className="mt-2">
+                          <input
+                            name="phone"
+                            type="text"
+                            onChange={customerChange}
+                            autoComplete="tel"
+                            className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 lg:text-sm/6"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
 
               {/* Order summary */}
               <div className="mt-10 lg:mt-0">
@@ -491,14 +480,29 @@ export default function Example(props) {
                   Order summary
                 </h2>
 
-                <div className="mt-4 rounded-lg border border-gray-200 bg-white shadow-sm">
+                <div className="mt-4 rounded-lg border border-gray-200 bg-white">
                   <h3 className="sr-only">Items in your cart</h3>
                   <ul role="list" className="divide-y divide-gray-200">
                     {Object.entries(foundCookieOrder.cookieOrder)
                       .filter(([key, value]) => value !== 0)
                       .map(([key, value]) => (
-                        <li key={key.id} className="py-1 px-4 lg:px-6">
-                          <div className="">
+                        <li
+                          key={key.id}
+                          className="flex items-center py-4 px-4 lg:px-6"
+                        >
+                          <div className="shrink-0">
+                            <img
+                              alt={key}
+                              src={
+                                key === "redVelvet"
+                                  ? "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png"
+                                  : ""
+                              }
+                              // src={key.imageSrc}
+                              className="w-20 rounded-md"
+                            />
+                          </div>
+                          <div className="ml-6 flex flex-1 flex-col">
                             <div className="flex items-center">
                               <div className="min-w-0 flex-1">
                                 <h4 className="text-mb">
@@ -506,6 +510,7 @@ export default function Example(props) {
                                     {key === "redVelvet" ? "Red Velvet" : ""}
                                     {key === "chocChip" ? "Chocolate Chip" : ""}
                                     {key === "lemon" ? "Lemon" : ""}
+                                    {key === "smores" ? "Smores" : ""}
                                   </p>
                                 </h4>
                               </div>
@@ -528,38 +533,66 @@ export default function Example(props) {
                     </div>
                   </dl>
 
-                  <div className="border-t border-gray-200 px-4 py-6 lg:px-6">
-                    {customerData.firstName === "" ||
-                    customerData.lastName === "" ||
-                    customerData.shippingAddress === "" ||
-                    customerData.shippingCity === "" ||
-                    customerData.shippingState === "" ||
-                    customerData.email === "" ||
-                    customerData.shippingAddress === "" ||
-                    emailCheck === false ? (
-                      <button
-                        disabled
-                        className="w-full rounded-full border border-transparent bg-gray-400 px-4 py-3 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-                      >
-                        Confirm order
-                      </button>
-                    ) : (
-                      <button
-                        onClick={() => getPaymentIntent()}
-                        className="w-full rounded-full border border-transparent bg-blue-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-                      >
-                        Confirm order
-                      </button>
-                    )}
+                  {clientSecret === "" ? (
+                    <div className="border-t border-gray-200 px-4 py-6 lg:px-6">
+                      {customerData.firstName === "" ||
+                      customerData.lastName === "" ||
+                      customerData.shippingAddress === "" ||
+                      customerData.shippingCity === "" ||
+                      customerData.shippingState === "" ||
+                      customerData.email === "" ||
+                      customerData.shippingAddress === "" ||
+                      emailCheck === false ? (
+                        <button
+                          type="button"
+                          disabled
+                          className="w-full rounded-full border border-transparent bg-gray-400 px-4 py-3 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                        >
+                          Confirm order
+                        </button>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => getPaymentIntent()}
+                          className="w-full rounded-full border border-transparent bg-blue-600 px-4 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                        >
+                          Confirm order
+                        </button>
+                      )}
 
-                    <a
-                      href="/"
-                      className="flex justify-center mt-4 w-full rounded-full border border-transparent bg-red-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-                    >
-                      Start Over
-                    </a>
-                  </div>
+                      <a
+                        href="/"
+                        className="flex justify-center mt-4 w-full rounded-full border border-transparent bg-red-600 px-4 py-3 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                      >
+                        Start Over
+                      </a>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
                 </div>
+                {clientSecret === "" ? (
+                  <></>
+                ) : (
+                  <a
+                    href="/"
+                    className="flex justify-center mt-4 w-full rounded-full border border-transparent bg-red-600 px-4 py-3 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                  >
+                    Start Over
+                  </a>
+                )}
+              </div>
+              <div class="checkout sticky mt-2 top-5 ">
+                {clientSecret != "" ? (
+                  <Elements stripe={stripePromise} options={options}>
+                    <PaymentForm
+                      customer={customerData}
+                      paymentIntent={paymentIntent}
+                    />{" "}
+                  </Elements>
+                ) : (
+                  <></>
+                )}
               </div>
             </form>
           </div>

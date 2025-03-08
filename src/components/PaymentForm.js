@@ -85,11 +85,11 @@ const PaymentForm = (props) => {
   console.log(dataForm);
 
   return (
-    <section class="shadow mt-16 bg-white border border-emerald-500 rounded-lg px-4 py-6 sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5">
+    <section class="shadow mt-16 bg-white border border-sky-500 rounded-lg px-4 py-6 sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5">
       <div class="flex justify-center">
         {" "}
         <svg
-          class="h-8 text-emerald-700"
+          class="h-8 text-sky-700"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
@@ -101,94 +101,10 @@ const PaymentForm = (props) => {
             clip-rule="evenodd"
           />
         </svg>
-        <h2 class=" ml-2 text-2xl text-emerald-700">Payment Information</h2>
+        <h2 class=" ml-2 text-2xl text-sky-700">Payment Information</h2>
       </div>
 
-      <div class="mt-6 mb-4 flex justify-center">
-        {" "}
-        {paymentType === "card" ? (
-          <button class="pointer-events-none w-1/3 border-2 border-orange-600 rounded-md p-3 focus:outline-none text-orange-600 opacity-50">
-            <svg
-              class="h-12 mx-auto"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M0 8v-2c0-1.104.896-2 2-2h18c1.104 0 2 .896 2 2v2h-22zm24 7.5c0 2.485-2.015 4.5-4.5 4.5s-4.5-2.015-4.5-4.5 2.015-4.5 4.5-4.5 4.5 2.015 4.5 4.5zm-2.156-.882l-.696-.696-2.116 2.169-.991-.94-.696.697 1.688 1.637 2.811-2.867zm-8.844.882c0 1.747.696 3.331 1.82 4.5h-12.82c-1.104 0-2-.896-2-2v-7h14.82c-1.124 1.169-1.82 2.753-1.82 4.5zm-5 .5h-5v1h5v-1zm3-2h-8v1h8v-1z"
-                clip-rule="evenodd"
-              />
-            </svg>
-            <span class="font-medium text-xs">Card/Wallet</span>
-          </button>
-        ) : (
-          <button
-            onClick={() => {
-              setPaymentType("card");
-            }}
-            class="w-1/3 border-2 border-blue-800 rounded-md p-3 focus:outline-none text-blue-800 hover:opacity-50"
-          >
-            <svg
-              class="h-12 mx-auto"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M0 8v-2c0-1.104.896-2 2-2h18c1.104 0 2 .896 2 2v2h-22zm24 7.5c0 2.485-2.015 4.5-4.5 4.5s-4.5-2.015-4.5-4.5 2.015-4.5 4.5-4.5 4.5 2.015 4.5 4.5zm-2.156-.882l-.696-.696-2.116 2.169-.991-.94-.696.697 1.688 1.637 2.811-2.867zm-8.844.882c0 1.747.696 3.331 1.82 4.5h-12.82c-1.104 0-2-.896-2-2v-7h14.82c-1.124 1.169-1.82 2.753-1.82 4.5zm-5 .5h-5v1h5v-1zm3-2h-8v1h8v-1z"
-                clip-rule="evenodd"
-              />
-            </svg>
-            <span class="font-medium text-xs">Card/Wallet</span>
-          </button>
-        )}
-        {paymentType === "bank" ? (
-          <button class="ml-3 pointer-events-none w-1/3 border-2 border-orange-600 rounded-md p-3 focus:outline-none text-orange-600 opacity-70">
-            <svg
-              class="h-11 mb-1 mx-auto"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M7 21h-4v-11h4v11zm7-11h-4v11h4v-11zm7 0h-4v11h4v-11zm2 12h-22v2h22v-2zm-23-13h24l-12-9-12 9z"
-                clip-rule="evenodd"
-              />
-            </svg>{" "}
-            <span class="font-medium text-xs">Bank Transfer</span>
-          </button>
-        ) : (
-          <button
-            onClick={() => {
-              setPaymentType("bank");
-            }}
-            class="w-1/3 ml-3 border-2 border-blue-800 rounded-md p-3 focus:outline-none text-blue-800 hover:opacity-70"
-          >
-            <svg
-              class="h-11 mb-1 mx-auto"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M7 21h-4v-11h4v11zm7-11h-4v11h4v-11zm7 0h-4v11h4v-11zm2 12h-22v2h22v-2zm-23-13h24l-12-9-12 9z"
-                clip-rule="evenodd"
-              />
-            </svg>{" "}
-            <span class="font-medium text-xs">Bank Transfer</span>
-          </button>
-        )}
-      </div>
-
-      <div class="border-b border-emerald-400 pt-4 "></div>
+      <div class="border-b border-sky-400 pt-4 "></div>
 
       {paymentType === "card" ? (
         <div>
@@ -200,84 +116,9 @@ const PaymentForm = (props) => {
                 </div>
               </fieldset>{" "}
               <div class="mt-8">
-                <div class="terms space-y-7">
-                  <div class="relative flex items-center">
-                    <div class="flex items-center h-5">
-                      <input
-                        name="terms1"
-                        type="checkbox"
-                        required
-                        class="focus:ring-indigo-500 h-5 w-5 border-gray-300 rounded"
-                      />
-                    </div>
-                    <div class="ml-3 text-sm">
-                      <p class="text-emerald-700 font-medium">
-                        I understand that I am purchasing carbon credits to
-                        offset my, or my company's carbon output.
-                      </p>
-                    </div>
-                  </div>{" "}
-                  <div class="relative flex items-center">
-                    <div class="flex items-center h-5">
-                      <input
-                        name="terms2"
-                        type="checkbox"
-                        required
-                        class="focus:ring-indigo-500 h-5 w-5 border-gray-300 rounded"
-                      />
-                    </div>
-                    <div class="ml-3 text-sm">
-                      <p class="text-emerald-700 font-medium">
-                        I understand that the total displayed will be charged to
-                        the payment method selected above{" "}
-                        {props.data.priceType === "yearly" ? (
-                          <span class="text-green-900 font-medium">
-                            annually.
-                          </span>
-                        ) : (
-                          <span class="text-green-900 font-medium">
-                            monthly.
-                          </span>
-                        )}
-                      </p>
-                    </div>
-                  </div>{" "}
-                  <div class="relative flex items-center">
-                    <div class="flex items-center h-5">
-                      <input
-                        name="terms3"
-                        type="checkbox"
-                        required
-                        class="focus:ring-indigo-500 h-5 w-5 border-gray-300 rounded"
-                      />
-                    </div>
-                    <div class="ml-3 text-sm">
-                      <p class="text-emerald-700 font-medium">
-                        Your personal data will be used to process your order,
-                        support your experience throughout this website, and for
-                        other purposes described in our{" "}
-                        <a
-                          href="http://localhost:8888/.netlify/functions/terms/english/"
-                          target="blank"
-                          class="text-blue font-medium underline hover:opacity-70"
-                        >
-                          privacy policy
-                        </a>
-                        . I have read and agree to the website{" "}
-                        <a
-                          href="http://localhost:8888/.netlify/functions/terms/english/"
-                          target="blank"
-                          class="text-blue font-medium underline hover:opacity-70"
-                        >
-                          terms and conditions
-                        </a>
-                      </p>
-                    </div>
-                  </div>{" "}
-                </div>{" "}
-                <div class="mt-28 sm:mt-14 ">
+                <div class="mt-28 lg:mt-0 ">
                   <button
-                    class="block bg-emerald-800 border border-transparent rounded-md w-full mx-auto  py-3 flex items-center justify-center text-base leading-6 font-medium hover:opacity-70 focus:outline-none"
+                    class="block bg-blue-500 border border-transparent rounded-full w-full mx-auto  py-3 flex items-center justify-center text-base leading-6 font-medium hover:opacity-70 focus:outline-none"
                     type="submit"
                     disabled={!stripe}
                   >

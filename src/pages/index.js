@@ -9,6 +9,7 @@ const IndexPage = () => {
     redVelvet: 0,
     chocChip: 0,
     lemon: 0,
+    smores: 0,
   });
   //
   //
@@ -118,6 +119,41 @@ const IndexPage = () => {
   //////////////////////////////
   //
   //
+  //
+  //
+  //
+  //////////// Smores
+  //
+  const smoresincrement = () => {
+    if (cookieOrder.smores === 50) {
+      setcookieOrder({
+        ...cookieOrder,
+        smores: 50,
+      });
+    } else
+      setcookieOrder({
+        ...cookieOrder,
+        smores: cookieOrder.smores + 1,
+      });
+  };
+
+  const smoresdecrement = () => {
+    if (cookieOrder.smores === 0) {
+      setcookieOrder({
+        ...cookieOrder,
+        smores: 0,
+      });
+    } else {
+      setcookieOrder({
+        ...cookieOrder,
+        smores: cookieOrder.smores - 1,
+      });
+    }
+  };
+  //
+  //////////////////////////////
+  //
+  //
   const cookies = [
     {
       id: 1,
@@ -153,6 +189,18 @@ const IndexPage = () => {
       imageSrc:
         "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png",
       imageAlt: "Lemon Cookie",
+      price: "$5",
+    },
+    {
+      id: 4,
+      name: "Smores",
+      incrementFunc: () => smoresincrement(),
+      decrementFunc: () => smoresdecrement(),
+      count: cookieOrder.smores,
+
+      imageSrc:
+        "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png",
+      imageAlt: "Smores Cookie",
       price: "$5",
     },
     // More cookies...
@@ -382,7 +430,7 @@ const IndexPage = () => {
           </div>
         </div>
 
-        <section id="">
+        <section id="menu">
           <div className="isolate px-6 py-10">
             <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
               <h2 className="text-center text-6xl font-bold text-gray-900">
@@ -519,21 +567,21 @@ const IndexPage = () => {
             </div>
             <button
               onClick={() => checkout()}
-              disabled={cookieMin <= 12}
+              disabled={cookieMin < 12}
               class={`w-full rounded-full border border-transparent py-5 px-4 py-2 text-3xl font-medium text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-50 ${
-                cookieMin <= 12
-                  ? "bg-gray-400"
-                  : "bg-blue-600 hover:bg-blue-700"
+                cookieMin < 12 ? "bg-gray-400" : "bg-blue-600 hover:bg-blue-700"
               }`}
             >
-              {cookieMin <= 12
-                ? ` Add ${12 - cookieMin} more cookies`
+              {cookieMin < 12
+                ? ` Add ${12 - cookieMin} more ${
+                    cookieMin === 11 ? "cookie" : "cookies"
+                  }`
                 : "Checkout"}
             </button>
           </div>
         </section>
 
-        <section id="menu">
+        <section id="">
           <div class="hidden soldout bg-gradient-to-b from-red-400 to-rose-600">
             <div class="dozen mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
               <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
