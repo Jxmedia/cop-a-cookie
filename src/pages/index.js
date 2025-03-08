@@ -163,7 +163,7 @@ const IndexPage = () => {
       count: cookieOrder.redVelvet,
 
       imageSrc:
-        "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png",
+        "https://imgix.cosmicjs.com/8bb942a0-fc67-11ef-bd06-9777d05fbca5-Velvet.png",
       imageAlt: "Red Velvet Cookie",
       price: "$5",
     },
@@ -175,7 +175,7 @@ const IndexPage = () => {
       count: cookieOrder.chocChip,
 
       imageSrc:
-        "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png",
+        "https://imgix.cosmicjs.com/98a6c7c0-fc68-11ef-bd06-9777d05fbca5-Choc.png",
       imageAlt: "Chocolate Chip Cookie",
       price: "$5",
     },
@@ -187,7 +187,7 @@ const IndexPage = () => {
       count: cookieOrder.lemon,
 
       imageSrc:
-        "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png",
+        "https://imgix.cosmicjs.com/d53e8f60-fc68-11ef-bd06-9777d05fbca5-Lemon.png",
       imageAlt: "Lemon Cookie",
       price: "$5",
     },
@@ -199,7 +199,7 @@ const IndexPage = () => {
       count: cookieOrder.smores,
 
       imageSrc:
-        "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png",
+        "https://imgix.cosmicjs.com/0a9a56e0-fc68-11ef-bd06-9777d05fbca5-Smores.png",
       imageAlt: "Smores Cookie",
       price: "$5",
     },
@@ -444,7 +444,7 @@ const IndexPage = () => {
                 {cookies.map((product) => (
                   <div key={product.id}>
                     <div className="relative">
-                      <div className="relative h-72 w-full overflow-hidden rounded-lg">
+                      <div className="relative h-96 w-auto overflow-hidden rounded-lg">
                         <img
                           alt={product.imageAlt}
                           src={product.imageSrc}
@@ -456,7 +456,7 @@ const IndexPage = () => {
                           {product.name}
                         </h3>
                       </div>
-                      <div className="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
+                      <div className="absolute inset-x-0 top-0 flex h-96 items-end justify-end overflow-hidden rounded-lg p-4">
                         <div
                           aria-hidden="true"
                           className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-gray-500 opacity-50"

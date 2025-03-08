@@ -79,7 +79,6 @@ export default function Example(props) {
   }, []);
 
   const getPaymentIntent = async () => {
-    // createEnrollmentEntry(function () {});//
     const intent = await fetch("/.netlify/functions/stripe-payment", {
       method: "POST",
       body: JSON.stringify({
@@ -491,16 +490,43 @@ export default function Example(props) {
                           className="flex items-center py-4 px-4 lg:px-6"
                         >
                           <div className="shrink-0">
-                            <img
-                              alt={key}
-                              src={
-                                key === "redVelvet"
-                                  ? "https://crumbl.video/cdn-cgi/image/width=640,format=auto,quality=80/https://crumbl.video/7d75a321-0028-4012-a0b3-1b3ed429fe76_SemiSweetChocolateChunk_OverheadAeria_NoShadow_TECH.png"
-                                  : ""
-                              }
-                              // src={key.imageSrc}
-                              className="w-20 rounded-md"
-                            />
+                            {key === "redVelvet" ? (
+                              <img
+                                alt={key}
+                                src="https://imgix.cosmicjs.com/8bb942a0-fc67-11ef-bd06-9777d05fbca5-Velvet.png"
+                                className="w-20 rounded-md"
+                              />
+                            ) : (
+                              <></>
+                            )}
+                            {key === "chocChip" ? (
+                              <img
+                                alt={key}
+                                src="https://imgix.cosmicjs.com/98a6c7c0-fc68-11ef-bd06-9777d05fbca5-Choc.png"
+                                className="w-20 rounded-md"
+                              />
+                            ) : (
+                              <></>
+                            )}
+
+                            {key === "smores" ? (
+                              <img
+                                alt={key}
+                                src="https://imgix.cosmicjs.com/0a9a56e0-fc68-11ef-bd06-9777d05fbca5-Smores.png"
+                                className="w-20 rounded-md"
+                              />
+                            ) : (
+                              <></>
+                            )}
+                            {key === "lemon" ? (
+                              <img
+                                alt={key}
+                                src="https://imgix.cosmicjs.com/d53e8f60-fc68-11ef-bd06-9777d05fbca5-Lemon.png"
+                                className="w-20 rounded-md"
+                              />
+                            ) : (
+                              <></>
+                            )}
                           </div>
                           <div className="ml-6 flex flex-1 flex-col">
                             <div className="flex items-center">
