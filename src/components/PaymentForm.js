@@ -20,20 +20,6 @@ const PaymentForm = (props) => {
   }
 
   var finalPrice = "";
-  var recurringConversion = "";
-
-  switch (props.data.priceType) {
-    case "yearly":
-      var finalPrice = props.priceYear;
-      var recurringConversion = "/yr";
-      var recurringDescription = "Carbon Offset Subscription Yearly";
-      break;
-    case "monthly":
-      var finalPrice = (props.priceYear / 12).toFixed(2);
-      var recurringConversion = "/mo";
-      var recurringDescription = "Carbon Offset Subscription Monthly";
-      break;
-  }
 
   const stripeCost = finalPrice * 100;
 
@@ -78,7 +64,7 @@ const PaymentForm = (props) => {
           dataForm.email
         }&cost=${finalPrice}&energy=${props.energy.toFixed(
           2
-        )}&pr=${finalPrice}&r=${recurringConversion}`,
+        )}&pr=${finalPrice}`,
       },
     });
 
@@ -207,7 +193,7 @@ const PaymentForm = (props) => {
       {paymentType === "card" ? (
         <div>
           <div class="card mt-8 relative">
-            <form onSubmit={handleSubmit}>
+            <form>
               <fieldset className="FormGroup">
                 <div className="">
                   <PaymentElement />

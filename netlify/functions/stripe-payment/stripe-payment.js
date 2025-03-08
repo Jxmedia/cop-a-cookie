@@ -24,7 +24,7 @@ exports.handler = async (event) => {
     const paymentIntent = await stripe.paymentIntents.create({
       amount: Number(data.amount),
       setup_future_usage: "off_session",
-      description: data.recurring,
+      description: JSON.stringify(data.order),
       customer: customer.id,
       currency: "USD",
       automatic_payment_methods: {
