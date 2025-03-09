@@ -1,7 +1,8 @@
 require("dotenv").config();
-const stripe = require("stripe")(
-  "sk_test_51QzzSCIxza1i2VicwQQoQyxF0TAM2Bhj0ziuz9POSQYriWvcLQNMKQwCR0pkxp3XTF3KYhDLQuWQNkWWjfX7hOzn00hsA1ahiX"
-);
+// const stripe = require("stripe")(
+//   "sk_test_51QzzSCIxza1i2VicwQQoQyxF0TAM2Bhj0ziuz9POSQYriWvcLQNMKQwCR0pkxp3XTF3KYhDLQuWQNkWWjfX7hOzn00hsA1ahiX"
+// );
+const stripe = require("stripe")(process.env.STRIPE_SECRET);
 
 exports.handler = async (event) => {
   const data = JSON.parse(event.body);

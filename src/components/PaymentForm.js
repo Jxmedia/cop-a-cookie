@@ -33,7 +33,7 @@ const PaymentForm = (props) => {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    console.log("handle submit");
 
     if (!stripe || !elements) {
       // Stripe.js has not yet loaded.
@@ -49,22 +49,7 @@ const PaymentForm = (props) => {
       confirmParams: {
         // Make sure to change this to your payment completion page
         //{`/enroll?product=${product}&plan=${plan}`}//
-        return_url: `https://gogreencredits.com/offset-confirmation?f=${
-          dataForm.firstName
-        }&l=${dataForm.lastName}&a=${
-          dataForm.billingAddress + " " + dataForm.billingSuite
-        }&ac=${
-          dataForm.billingCity +
-          "," +
-          " " +
-          dataForm.billingState +
-          " " +
-          dataForm.billingZip
-        }&c=${dataForm.companyName}&p=${formatPhoneNumber(dataForm.phone)}&e=${
-          dataForm.email
-        }&cost=${finalPrice}&energy=${props.energy.toFixed(
-          2
-        )}&pr=${finalPrice}`,
+        return_url: `https://cookie-test-3019u230129u31029u.netlify.app/thank-you/`,
       },
     });
 
@@ -76,6 +61,7 @@ const PaymentForm = (props) => {
     if (error.type === "card_error" || error.type === "validation_error") {
       alert(error.message);
     } else {
+      console.log(error);
       alert("An unexpected error occured.");
     }
 
@@ -119,7 +105,8 @@ const PaymentForm = (props) => {
                 <div class="mt-28 lg:mt-0 ">
                   <button
                     class="block bg-blue-500 border border-transparent rounded-full w-full mx-auto  py-3 flex items-center justify-center text-base leading-6 font-medium hover:opacity-70 focus:outline-none"
-                    type="submit"
+                    type="button"
+                    onClick={() => handleSubmit()}
                     disabled={!stripe}
                   >
                     <span class="text-white">Order Now</span>
