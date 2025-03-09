@@ -6,7 +6,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET);
 
 exports.handler = async (event) => {
   const data = JSON.parse(event.body);
-  console.log(data);
+
   const customer = await stripe.customers.create({
     email: data.customer.email,
     name: data.customer.firstName + " " + data.customer.lastName,
@@ -32,7 +32,7 @@ exports.handler = async (event) => {
         enabled: true,
       },
     });
-    console.log(paymentIntent);
+    // console.log(paymentIntent);
     return {
       statusCode: 200, // http status code
 

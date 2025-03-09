@@ -203,7 +203,7 @@ export default function Example(props) {
                 </a>
               </div>
             ) : (
-              <div class="w-1/6 mx-auto">
+              <div class="w-1/2 lg:w-1/6 mx-auto">
                 <a href="/" class=" hover:opacity-70">
                   <img
                     src="https://imgix.cosmicjs.com/49483c30-fa16-11ef-97be-337de38c2241-Main-logo-word-flat.png"
@@ -471,7 +471,7 @@ export default function Example(props) {
               )}
 
               {/* Order summary */}
-              <div className="mt-10 lg:mt-0">
+              <div className="hidden lg:block mt-10 lg:mt-0">
                 <h2 className="text-lg font-medium text-gray-900">
                   Order summary
                 </h2>
@@ -605,7 +605,7 @@ export default function Example(props) {
                   </a>
                 )}
               </div>
-              <div class="checkout sticky mt-2 top-5 ">
+              <div class="checkout sticky mt-2 top-5">
                 {clientSecret != "" ? (
                   <Elements stripe={stripePromise} options={options}>
                     <PaymentForm
@@ -616,6 +616,12 @@ export default function Example(props) {
                 ) : (
                   <></>
                 )}
+                <a
+                  href="/"
+                  className="lg:hidden flex justify-center mt-4 w-full rounded-full border border-transparent bg-red-600 px-4 py-3 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                >
+                  Start Over
+                </a>
               </div>
             </form>
           </div>

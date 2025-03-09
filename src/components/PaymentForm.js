@@ -33,8 +33,6 @@ const PaymentForm = (props) => {
   }
 
   const handleSubmit = async (e) => {
-    console.log("handle submit");
-
     if (!stripe || !elements) {
       // Stripe.js has not yet loaded.
       // Make sure to disable form submission until Stripe.js has loaded.
