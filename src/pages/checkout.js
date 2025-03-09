@@ -6,10 +6,8 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import PaymentForm from "../components/PaymentForm";
 
-const PUBLIC_KEY = process.env.PUBLIC_KEY;
-
-// const PUBLIC_KEY =
-//   "pk_test_51QzzSCIxza1i2ViczmxG91CQ766wbXyvTKtYqloEhtMVlbcmh2ggrgbzACONwIxustBRlOBzKio4wDxBagdiUGxj005UJWlYmv";
+const PUBLIC_KEY =
+  "pk_test_51QzzSCIxza1i2ViczmxG91CQ766wbXyvTKtYqloEhtMVlbcmh2ggrgbzACONwIxustBRlOBzKio4wDxBagdiUGxj005UJWlYmv";
 
 const stripePromise = loadStripe(PUBLIC_KEY);
 
@@ -20,8 +18,6 @@ export default function Example(props) {
   const [paymentIntent, setPaymentIntent] = useState("");
 
   const [foundCookieOrder, setfoundCookieOrder] = useState(0);
-
-  console.log(foundCookieOrder.cookieOrder);
 
   //
   //
@@ -74,7 +70,7 @@ export default function Example(props) {
   useEffect(() => {
     const cookies = window.localStorage.getItem("COOKIE_ORDER");
     if (cookies !== null) {
-      console.log("inside function");
+      // console.log("inside function");
       const cookieOrder = JSON.parse(cookies);
       setfoundCookieOrder(cookieOrder);
     } else window.location.href = `/`;
@@ -92,7 +88,7 @@ export default function Example(props) {
 
     const { paymentIntent } = await intent.json();
 
-    console.log(paymentIntent);
+    // console.log(paymentIntent);
     setClientSecret(paymentIntent.client_secret);
     setPaymentIntent(paymentIntent);
   };

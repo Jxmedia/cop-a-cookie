@@ -211,7 +211,6 @@ const IndexPage = () => {
   const cookieMin = Object.values(cookieOrder).reduce((a, b) => a + b, 0);
   //
 
-  console.log(cookieOrder);
   //
   //
   //
