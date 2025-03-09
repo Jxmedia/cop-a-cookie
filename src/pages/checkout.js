@@ -11,7 +11,7 @@ const PUBLIC_KEY = process.env.PUBLIC_KEY;
 // const PUBLIC_KEY =
 //   "pk_test_51QzzSCIxza1i2ViczmxG91CQ766wbXyvTKtYqloEhtMVlbcmh2ggrgbzACONwIxustBRlOBzKio4wDxBagdiUGxj005UJWlYmv";
 
-const stripePromise = loadStripe(PUBLIC_KEY);
+const stripePromise = loadStripe(process.env.PUBLIC_KEY);
 
 export default function Example(props) {
   const [isBannerOpened, setisBannerOpened] = useState(true);
