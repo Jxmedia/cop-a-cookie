@@ -68,8 +68,6 @@ const PaymentForm = (props) => {
     setIsLoading(false);
   };
 
-  console.log(dataForm);
-
   return (
     <section class="shadow mt-16 bg-white border border-sky-500 rounded-lg px-4 py-6 lg:p-6 lg:p-8 lg:mt-0 lg:col-span-5">
       <div class="flex justify-center">
