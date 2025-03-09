@@ -19,7 +19,7 @@ const Terms = () => {
       </Helmet>
 
       <div class="">
-        <div class="bg-white py-24 sm:py-32">
+        <div class="bg-white py-24 lg:py-32">
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-7xl items-start ">
               <div class="my-auto">
@@ -33,7 +33,7 @@ const Terms = () => {
               </div>
               <div>
                 <div class="text-base leading-7 text-gray-700 ">
-                  <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                  <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
                     Privacy Policy
                   </h1>
                   <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900">

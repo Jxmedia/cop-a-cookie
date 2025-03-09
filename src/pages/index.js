@@ -242,7 +242,7 @@ const IndexPage = () => {
       </Helmet>
 
       {isBannerOpened === true ? (
-        <div class="sticky top-0 z-50 flex items-center gap-x-6 bg-amber-400 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+        <div class="sticky top-0 z-50 flex items-center gap-x-6 bg-amber-400 px-6 py-2.5 lg:px-3.5 lg:before:flex-1">
           <p class="text-sm leading-6 text-white">
             <a>
               <strong class=" text-2xl font-semibold">
@@ -281,10 +281,10 @@ const IndexPage = () => {
         <div></div>
       )}
       <div class="">
-        <div class="hidden md:block relative isolate overflow-hidden bg-blue-500">
+        <div class="hidden lg:block relative isolate overflow-hidden bg-blue-500">
           <div class="mx-auto items-center max-w-7xl px-6 pt-10 pb-10 lg:flex lg:px-8">
             <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-              <h1 class="mt-6 text-4xl font-bold tracking-tight text-white sm:text-6xl">
+              <h1 class="mt-6 text-4xl font-bold tracking-tight text-white lg:text-6xl">
                 HANDMADE COOKIES DELIVERED TO YOUR DOORSTEP
               </h1>
               <p class="mt-6 text-lg leading-8 text-white">
@@ -308,7 +308,7 @@ const IndexPage = () => {
                 </AnchorLink>
               </div>
             </div>
-            <div class="md:ml-10 my-auto">
+            <div class="lg:ml-10 my-auto">
               <div class=" rounded-xl lg:rounded-2xl lg:p-4">
                 <img
                   src="https://imgix.cosmicjs.com/d9f9e590-bd3a-11ee-9fc1-4bb6168d3a2d-main-transparent.png"
@@ -320,7 +320,7 @@ const IndexPage = () => {
           </div>
         </div>
 
-        <div class="block md:hidden text-center relative isolate overflow-hidden bg-sky-200">
+        <div class="block lg:hidden text-center relative isolate overflow-hidden bg-sky-200">
           <div class="mx-auto items-center max-w-7xl px-6 pt-10 pb-10 lg:flex lg:px-8">
             <div class="my-auto">
               <div class=" rounded-xl lg:rounded-2xl lg:p-4">
@@ -333,7 +333,7 @@ const IndexPage = () => {
             </div>
 
             <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-              <h1 class="mt-6 text-4xl font-bold tracking-tight text-sky-900 sm:text-6xl">
+              <h1 class="mt-6 text-4xl font-bold tracking-tight text-sky-900 lg:text-6xl">
                 HANDMADE COOKIES DELIVERED TO YOUR DOORSTEP
               </h1>
               <p class="mt-6 text-lg leading-8 text-gray-600">
@@ -360,11 +360,11 @@ const IndexPage = () => {
           </div>
         </div>
 
-        <div class="bg-sky-200 py-24 sm:py-32">
+        <div class="bg-sky-200 py-24 lg:py-32">
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 lg:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
               <div class="lg:pr-4">
-                <div class="hidden md:flex relative">
+                <div class="hidden lg:flex relative">
                   <img
                     class="h-full rounded-3xl flex-1"
                     src="https://imgix.cosmicjs.com/8ac3c950-bb87-11ee-9be1-85f53db06a1d-bio.png"
@@ -374,7 +374,7 @@ const IndexPage = () => {
               </div>
               <div>
                 <div class="text-base leading-7 text-gray-700 lg:max-w-lg">
-                  <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                  <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
                     About Cop A Cookie
                   </h1>
                   <div class="max-w-xl">
@@ -432,7 +432,7 @@ const IndexPage = () => {
 
         <section id="menu">
           <div className="isolate px-6 py-10">
-            <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+            <div className="mx-auto max-w-2xl px-4 py-16 lg:px-6 lg:py-24 lg:max-w-7xl lg:px-8">
               <h2 className="text-center text-6xl font-bold text-gray-900">
                 Available Flavors{" "}
               </h2>
@@ -440,7 +440,7 @@ const IndexPage = () => {
                 (Dozen minimum)
               </h3>
 
-              <div className="mt-20 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
+              <div className="mt-20 grid grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
                 {cookies.map((product) => (
                   <div key={product.id}>
                     <div className="relative">
@@ -583,8 +583,8 @@ const IndexPage = () => {
 
         <section id="">
           <div class="hidden soldout bg-gradient-to-b from-red-400 to-rose-600">
-            <div class="dozen mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-              <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <div class="dozen mx-auto max-w-2xl px-4 py-16 lg:px-6 lg:py-24 lg:max-w-7xl lg:px-8">
+              <h1 class="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
                 CURRENTLY NOT TAKING ORDERS
                 <span class="block">
                   PREPARING FOR DESSERT WARS ON JUNE 1ST
@@ -596,15 +596,15 @@ const IndexPage = () => {
         </section>
 
         <section id="contact">
-          <div class="isolate bg-gradient-to-r from-cyan-50 to-blue-50 px-6 py-24 sm:py-32 lg:px-8">
+          <div class="isolate bg-gradient-to-r from-cyan-50 to-blue-50 px-6 py-24 lg:py-32 lg:px-8">
             <div
-              class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
+              class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl lg:top-[-20rem]"
               aria-hidden="true"
             >
               <div class="relative left-1/2 -z-10"></div>
             </div>
             <div class="mx-auto max-w-2xl text-center">
-              <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <h2 class="text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
                 Contact Or Submit A Review
               </h2>
             </div>
@@ -620,8 +620,8 @@ const IndexPage = () => {
               class="mx-auto mt-10 max-w-xl"
             >
               <input type="hidden" name="form-name" value="Main Contact" />
-              <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-                <div class="sm:col-span-2">
+              <div class="grid grid-cols-1 gap-x-8 gap-y-6 lg:grid-cols-2">
+                <div class="lg:col-span-2">
                   <label
                     for="full-name
                 full-name"
@@ -635,11 +635,11 @@ const IndexPage = () => {
                       name="full-name"
                       id="full-name"
                       autocomplete="organization"
-                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 lg:text-sm lg:leading-6"
                     />
                   </div>
                 </div>
-                <div class="sm:col-span-2">
+                <div class="lg:col-span-2">
                   <label
                     for="email"
                     class="block text-sm font-semibold leading-6 text-gray-900"
@@ -652,11 +652,11 @@ const IndexPage = () => {
                       name="email"
                       id="email"
                       autocomplete="email"
-                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 lg:text-sm lg:leading-6"
                     />
                   </div>
                 </div>
-                <div class="sm:col-span-2">
+                <div class="lg:col-span-2">
                   <label
                     for="phone-number"
                     class="block text-sm font-semibold leading-6 text-gray-900"
@@ -669,11 +669,11 @@ const IndexPage = () => {
                       name="phone-number"
                       id="phone-number"
                       autocomplete="tel"
-                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 lg:text-sm lg:leading-6"
                     />
                   </div>
                 </div>
-                <div class="sm:col-span-2">
+                <div class="lg:col-span-2">
                   <label
                     for="message"
                     class="block text-sm font-semibold leading-6 text-gray-900"
@@ -685,7 +685,7 @@ const IndexPage = () => {
                       name="message"
                       id="message"
                       rows="4"
-                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 lg:text-sm lg:leading-6"
                     ></textarea>
                   </div>
                 </div>

@@ -15,7 +15,7 @@ const ThankYou = () => {
         />
       </Helmet>
 
-      <main class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20">
+      <main class="mt-10 mx-auto max-w-screen-xl px-4 lg:mt-12 lg:px-6 lg:mt-16 lg:mt-20">
         <div class="text-center">
           <div className="mx-auto flex w-11/12">
             <img
@@ -24,7 +24,7 @@ const ThankYou = () => {
               alt="Logo"
             ></img>
           </div>
-          <h2 class="mt-14text-2xl md:text-4xl tracking-tight md:leading-12 font-extrabold text-blue-500 sm:text-5xl sm:leading-none">
+          <h2 class="mt-14text-2xl lg:text-4xl tracking-tight lg:leading-12 font-extrabold text-blue-500 lg:text-5xl lg:leading-none">
             Your Submission was received successfully!
           </h2>
 

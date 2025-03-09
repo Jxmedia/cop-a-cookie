@@ -6,8 +6,10 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import PaymentForm from "../components/PaymentForm";
 
-const PUBLIC_KEY =
-  "pk_test_51QzzSCIxza1i2ViczmxG91CQ766wbXyvTKtYqloEhtMVlbcmh2ggrgbzACONwIxustBRlOBzKio4wDxBagdiUGxj005UJWlYmv";
+const PUBLIC_KEY = process.env.PUBLIC_KEY;
+
+// const PUBLIC_KEY =
+//   "pk_test_51QzzSCIxza1i2ViczmxG91CQ766wbXyvTKtYqloEhtMVlbcmh2ggrgbzACONwIxustBRlOBzKio4wDxBagdiUGxj005UJWlYmv";
 
 const stripePromise = loadStripe(PUBLIC_KEY);
 
@@ -147,7 +149,11 @@ export default function Example(props) {
   console.log(paymentIntent);
 
   if (foundCookieOrder === 0) {
-    return <main class="animate-fade dashboard flex-1">Loading Order</main>;
+    return (
+      <main class="animate-pulse p-4 font-bold text-blue-200 dashboard flex-1">
+        Loading Order
+      </main>
+    );
   } else
     return (
       <>
