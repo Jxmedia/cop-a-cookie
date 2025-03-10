@@ -10,6 +10,7 @@ const PUBLIC_KEY =
   "pk_live_51OcGVVAV4iw1LHRuT3Ntedw2RQA75c2gmpVqf3wpfReNNWqM2MoneWFr7ZStMeiasRBroFrcIbJqSMx3zZ2aAIq800ULa868rL";
 
 const stripePromise = loadStripe(PUBLIC_KEY);
+//
 
 export default function Example(props) {
   const [isBannerOpened, setisBannerOpened] = useState(true);
