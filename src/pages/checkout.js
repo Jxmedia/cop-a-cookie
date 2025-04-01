@@ -617,12 +617,44 @@ export default function Example(props) {
                 ) : (
                   <></>
                 )}
-                <a
-                  href="/"
-                  className="lg:hidden flex justify-center mt-4 w-full rounded-full border border-transparent bg-red-600 px-4 py-3 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-                >
-                  Start Over
-                </a>
+
+                {clientSecret === "" ? (
+                  <div className="lg:hidden border-t border-gray-200 px-4 py-6 lg:px-6">
+                    {customerData.firstName === "" ||
+                    customerData.lastName === "" ||
+                    customerData.shippingAddress === "" ||
+                    customerData.shippingCity === "" ||
+                    customerData.shippingState === "" ||
+                    customerData.email === "" ||
+                    customerData.shippingAddress === "" ||
+                    emailCheck === false ? (
+                      <button
+                        type="button"
+                        disabled
+                        className="w-full rounded-full border border-transparent bg-gray-400 px-4 py-3 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                      >
+                        Confirm order
+                      </button>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => getPaymentIntent()}
+                        className="w-full rounded-full border border-transparent bg-blue-600 px-4 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                      >
+                        Confirm order
+                      </button>
+                    )}
+
+                    <a
+                      href="/"
+                      className="flex justify-center mt-4 w-full rounded-full border border-transparent bg-red-600 px-4 py-3 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                    >
+                      Start Over
+                    </a>
+                  </div>
+                ) : (
+                  <></>
+                )}
               </div>
             </form>
           </div>
