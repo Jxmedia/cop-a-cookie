@@ -434,7 +434,7 @@ export default function Example(props) {
                           htmlFor="shippingZip"
                           className="block text-sm/6 font-medium text-gray-700"
                         >
-                          Postal code<span class="text-red-500">*</span>
+                          Postal code
                         </label>
                         <div className="mt-2">
                           <input
