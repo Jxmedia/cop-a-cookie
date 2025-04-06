@@ -2,10 +2,12 @@ require("dotenv").config();
 // const stripe = require("stripe")(
 //   "sk_test_51QzzSCIxza1i2VicwQQoQyxF0TAM2Bhj0ziuz9POSQYriWvcLQNMKQwCR0pkxp3XTF3KYhDLQuWQNkWWjfX7hOzn00hsA1ahiX"
 // );
+// );
 const stripe = require("stripe")(process.env.STRIPE_SECRET);
 
 exports.handler = async (event) => {
   const data = JSON.parse(event.body);
+  console.log(data);
 
   const customer = await stripe.customers.create({
     email: data.customer.email,
@@ -13,11 +15,11 @@ exports.handler = async (event) => {
     phone: data.customer.phone,
 
     address: {
-      city: data.customer.billingCity,
-      line1: data.customer.billingAddress,
-      line2: data.customer.billingSuite,
-      postal_code: data.customer.billingZip,
-      state: data.customer.billingState,
+      city: data.customer.shippingCity,
+      line1: data.customer.shippingAddress,
+      line2: data.customer.shippingSuite,
+      postal_code: data.customer.shippingZip,
+      state: data.customer.shippingState,
     },
   });
 
