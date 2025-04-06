@@ -47,7 +47,7 @@ const PaymentForm = (props) => {
       confirmParams: {
         // Make sure to change this to your payment completion page
         //{`/enroll?product=${product}&plan=${plan}`}//
-        return_url: `https://cookie-test-3019u230129u31029u.netlify.app/thank-you/`,
+        return_url: `https://copacookie.com/thank-you/`,
       },
     });
 
